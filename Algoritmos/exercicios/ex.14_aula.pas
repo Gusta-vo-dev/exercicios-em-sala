@@ -1,35 +1,21 @@
 Program ex_14 ;
 
-		var maior, medio, menor, a, b, c, num:integer;
+		var a, b, c:integer;
 
 Begin
-    writeln ('Digite três valores');
-    readln (a, b, c);
-    if (a > b) and (a > c) then
-    begin
-			maior:= a;
-    	if (b > c) then 
-    	begin
-				medio:= b;
-    		menor:= c
-    	end
-    	else
-    	begin
-    		medio:= c;
-    		menor:= b;
-    if ( b > a) and (b > c) then
-    begin
-			maior:= b;
-    	if (a > c) then
-    		medio:= a;
-    		menor:= c;
-    end
-    else
-    begin
-    		medio:= c;
-    		menor:= a
-    end
-    else if (c > a, b) then
-   	maior:= c;
-   	if ( a > b ) the
+    
+		writeln (' Digite três valores');
+		readln (a, b, c);
+		if (a >= b) and (a >= c) and (b >= c) then
+		    	writeln('A ordem decrescente é', a , b, c)
+		else if (a >= b) and (a >=c) and (c >= b) then
+		     writeln('A ordem decrescente é', a , c, b)
+		else if (b >= a) and (b >= c) and (a >= c) then
+		     writeln('A ordem decrescente é', b , a, c)
+		else if (b >= a) and (b >= c) and (c >= a) then
+		    	writeln('A ordem decrescente é', b , c, a)
+		else if (c >= a) and (c >= b) and (a >=b)  then
+		    	writeln('A ordem decrescente é', c , a, b)
+		else if (c >= a) and (c >= b) and (b >= a) then
+		    	writeln('A ordem decrescente é', c , b, a)
 End.
