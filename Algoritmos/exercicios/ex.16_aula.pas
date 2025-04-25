@@ -7,8 +7,13 @@ Begin
     readln (peso);
     writeln ('Digite sua altura);
     readln (altura);
-    imc:= peso / ( altura ^ 2);
-    if  imc=  > 18,5 then
+    imc:= peso / ( altura * altura);
+    if  imc=  > 18.5 then
     		writeln ('Abaixo do peso')
-    else if imc
+    else if imc < 18.5 then
+    		writeln ('Peso normal')
+    else if imc < 25 then
+    		writeln ('Acima do peso')
+    else 
+    		writeln ('Obeso');
 End.
