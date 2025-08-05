@@ -8,7 +8,7 @@ Program ex_39 ;
 Begin
     for i:= 1 to cont do
     		begin
-    			writeln ('Digite um o valor ', i);
+    			writeln ('Digite um valor ', i);
     			readln (num[i]);
     			soma:=soma+num[i];
     		end;
