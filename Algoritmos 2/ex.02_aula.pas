@@ -8,7 +8,6 @@ Program ex_02 ;
 Begin
     for i:=1 to cont do 
     	begin
-    		randomize; 
 				num[i]:= 1 + random (25);
     		writeln (num[i], ' ');
 			end;
