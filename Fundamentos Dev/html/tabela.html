@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Tabelas</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 10px;
+        }
+
+        td, th {
+            border: 1px solid gray;
+            padding: 10px;
+        }
+
+        th {
+            font-size: larger;
+        }
+
+        .mat {
+            font-weight: bold;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <h1>Criando Tabelas</h1>
+    <table>
+        <tr>
+            <th>MATÉRIA</th>
+            <th>ALUNO</th>
+            <th>NOTA</th>
+        </tr>
+        <tr>
+            <td class="mat" rowspan="3" scope="colgroup">Matemática</td>
+            <td>Gustavo</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Daniela</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>2,0</td>
+        </tr>
+    </table>
+</body>
+</html>
