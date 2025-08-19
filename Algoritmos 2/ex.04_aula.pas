@@ -6,16 +6,16 @@ Program ex_matrizes ;
 Begin
     writeln ('Informe o tamanho da matriz');
     readln ( n );
-    for l:=1 to n do 
-    	for l:= 1  to n do
+    for l:= 1 to n do 
+    	for c:= 1  to n do
     	begin 
-    			gotoxy (c*4, l + 4);
-    			readln ( a[l + c]);
+    			gotoxy (c * 4, l + 4);
+    			readln ( a[l, c]);
     	end;
-     for l:=1 to n do 
-    	for l:= 1  to n do
+    for l:=1 to n do 
+    	for c:= 1  to n do
     	begin 
-    			gotoxy (c*4, l + 12);
-    			readln ( a[l + c]);
+    			gotoxy (c * 4, l + 12);
+    			writeln (a [l, c]);
     	end;
 End.
