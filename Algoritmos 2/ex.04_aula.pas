@@ -10,7 +10,7 @@ Begin
     	for c:= 1  to n do
     	begin 
     			gotoxy (c * 4, l + 4);
-    			readln ( a[l, c]);
+    			read (a [l, c]);
     	end;
     for l:=1 to n do 
     	for c:= 1  to n do
