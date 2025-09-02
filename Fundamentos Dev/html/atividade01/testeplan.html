@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Planos da Barbearia</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .plans-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 1rem;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .plan {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      padding: 2rem;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .plan:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    }
+    .plan h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #222;
+    }
+    .price {
+      font-size: 2rem;
+      color: #e67e22;
+      margin: 1rem 0;
+      font-weight: 700;
+    }
+    .description {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+    .btn {
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background-color: #cf6f1b;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #222;
+      color: #fff;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Barbearia Premium - Planos</h1>
+  </header>
+
+  <section class="plans-container">
+    <article class="plan">
+      <h2>Plano Básico</h2>
+      <p class="price">R$ 49,90 / mês</p>
+      <p class="description">
+        Corte de cabelo tradicional e barba simples. Atendimento rápido e eficiente para o dia a dia.
+      </p>
+      <a href="#" class="btn">Assinar</a>
+    </article>
+
+    <article class="plan">
+      <h2>Plano Plus</h2>
+      <p class="price">R$ 89,90 / mês</p>
+      <p class="description">
+        Inclui corte, barba detalhada, hidratação capilar e design de sobrancelha.
+      </p>
+      <a href="#" class="btn">Assinar</a>
+    </article>
+
+    <article class="plan">
+      <h2>Plano Premium</h2>
+      <p class="price">R$ 149,90 / mês</p>
+      <p class="description">
+        Todos os serviços do Plano Plus, mais massagem facial e atendimento VIP com agendamento prioritário.
+      </p>
+      <a href="#" class="btn">Assinar</a>
+    </article>
+  </section>
+
+  <footer>
+    &copy; 2025 Barbearia Premium. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
