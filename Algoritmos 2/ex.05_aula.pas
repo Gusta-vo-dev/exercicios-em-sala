@@ -21,8 +21,8 @@ Begin
 					else 
 						begin
 								v[i]:= n;
-								i:= i + 1;
-						end;	
+						end;
+				 i:= i + 1;			
 		  end;
 		for i:=1 to n do 
 			writeln (v[i], ' ');		
