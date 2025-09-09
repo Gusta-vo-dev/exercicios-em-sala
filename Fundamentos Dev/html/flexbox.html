@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedades Flex-Box</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color:  #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container  {
+            display: flex;
+            background-color: white;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            border: 5px solid black;
+        }
+
+        .container div {
+            width: 200px;
+            background-color: lightblue;
+            padding: 10px;
+            margin: 10px;
+            font-size: 25px;
+        }
+
+
+
+
+
+
+        .container2 {
+            display: flex;
+            background-color: lightgreen;
+            justify-content: center;
+        }
+
+        .container2 div {
+            width: 200px;
+            background-color: black;
+            color: white;
+            margin: 10px;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+
+
+
+
+        .container3 { /*Para centralizar a div e os itens ao centro da div*/
+            display: flex;
+            background-color: black;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .container3 div {
+            width: 250px;
+            height: 200px;
+            margin: 10px;
+            padding: 10px;
+            background-color: lightgreen;
+            display: flex;
+            font-weight: bolder;
+            flex-wrap: wrap;
+            font-size: 50px;  
+            justify-content: center;     
+            align-items: center;
+        }
+
+
+
+
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container4 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .card {
+            background-color: #3498db;
+            color: white;
+            font-size: 24px;
+            padding: 40px 0px;
+            margin: 5px;
+            text-align: center;
+            flex: 1 1 calc(25% - 32px);
+            box-sizing: border-box;/*Evita que o card fica maior do que se espera*/
+            border-radius: 20%;/*Arrendodamento da borda*/
+            box-shadow: 0px 6px 20px black; 
+            transition: transform 0.3s ease;/* Define uma transição suave em 0.3 segundos*/
+        }
+
+        .card:hover {
+            transform: scale(0.9);
+        }
+
+        /*Tablets (2 colunas)*/
+        @media (max-width: 1023px) {
+            .card {
+                flex: 1 1 calc(50% - 32px);
+            }
+        }
+
+        /*Celulares ( 1 coluna)*/
+        @media (max-width: 767px) {
+            .card {
+                flex: 1 1 100%;
+                background-color: black;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--Exemplo 01 de Flex-Box-->
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+    <!--Exemplo 02 de Flex-Box-->
+    <div class="container2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <!--Exemplo 03 de Flex-Box-->
+    <div class="container3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <!--Exemplo 04 de Flex-Box-->
+    <h1>Galeria Responsivas com Flex-Box</h1>
+    <div class="container4">
+        <div class="card">1</div>
+        <div class="card">2</div>
+        <div class="card">3</div>
+        <div class="card">4</div>
+        <div class="card">5</div>
+        <div class="card">6</div>
+        <div class="card">7</div>
+        <div class="card">8</di>
+    </div>
+</body>
+</html>
