@@ -1,28 +1,32 @@
 Program ex_06 ;
 
-	 var  i:integer;
-	 			a: array[1..10] of integer;
-	 			b: array[1..10] of integer;
-	 			c: array[1..10] of integer;
+		var va: array [1..10] of integer;
+				vb: array [1..8] of integer;
+				vc: array [1..10] of integer;
+				i, n, m: integer;
 
 Begin
-    for i:=1 to 10 do
+    writeln ('Digite a quantidade de elementos para o vetor A( máx = 10 )!');
+    readln ( n );
+    writeln ('Digite a quantidade de elementos para o vetor B ( máx = 8 )!');
+    readln ( m );
+    i:= 1;
+    while i < 11 do
     begin
-    		writeln ('Digite o ', i, 'º elemente do vetor A ( 10 elementos )');
-    		readln ( a[i] );
+		  		writeln ('Digite o ', i ,'º número para o vetor A: ');
+		  		readln ( va[i] );
+		  		i:= i + 1;
     end;
-    writeln ('==================================');
-    for i:=1 to 8 do
-    begin
-    		writeln ('Digite o ', i, 'º elemente do vetor B( 8 elementos)');
-    		readln ( b[i] ); 
-		end;
-		b[9]:=0;
-		b[10]:=0;       
-    for i:=1 to 10 do
-    begin
-       c[i]:= a[i] + b[i];
-       writeln ('A soma do ', i ,'º elemento dos vetores A e B é: ', c[i]);
-		end;  
-    
+    while i < 9 do
+	    begin
+			  	writeln ('Digite o ', i ,'º número para o vetor B: ');
+			  	readln ( va[i] );
+			  	i:= i + 1;
+	    end;
+	  for i:=1 to 11 do 
+	  begin
+	  	vc[i]:= va[i] + vb[i];
+			writeln ('Vetor C: ', vc[i]);
+	  end;
+	  
 End.
