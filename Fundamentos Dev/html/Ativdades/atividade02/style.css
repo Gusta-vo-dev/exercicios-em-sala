@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(176, 230, 230);
+}
+
+#cab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+    text-shadow: 0px 5px 10px #fff;
+    color: black;
+}
+
+.mytext {
+  font-family: "Inconsolata", monospace;
+  padding: 20px 50px;
+  background-color: #333;
+  color: white;
+  border-radius: 30px;
+  box-shadow: 0px 5px 10px black;
+  margin-bottom: 50px;
+}
+
+ #calendario {
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 50px;
+            background-color: blue;
+            color: white;
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 380px;
+            justify-content: center;
+            border-radius:20px 20px 0px 0px;
+        }
+ 
+ table {
+            border-collapse: collapse;
+            margin: 0px auto;
+            background-color: rgb(176, 230, 230);
+            padding: 10px;
+        }
+
+        td, th {
+            border: 2px solid gray;
+            padding: 10px;
+        }
+
+        .headt {
+            font-size:  40px larger;
+        }
+
+        .bold {
+            font-weight: bolder;
+            font-size: larger;
+        }
+
+        .transp {
+            color: rgba(0, 0, 0, 0.384);
+        }
+
+        .dom {
+            color: red;
+        }
+
+.img {
+    background-image: url(imagens/cool-technology-or-webside-banner-image-blue-background-_10568916.jpg!w700wp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media (min-width: 768px)
