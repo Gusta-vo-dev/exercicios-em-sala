@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(176, 230, 230);
+    background-color:lightgray;
 }
 
 #cab {
@@ -31,34 +31,38 @@ body {
             text-align: center;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: 50px;
-            background-color: blue;
+            background-color: black;
             color: white;
             margin: 0 auto;
             margin-top: 50px;
             width: 380px;
             justify-content: center;
             border-radius:20px 20px 0px 0px;
+            border: 2px solid white;
         }
  
  table {
             border-collapse: collapse;
             margin: 0px auto;
-            background-color: rgb(176, 230, 230);
+            background-color: lightgrey;
             padding: 10px;
+            border: 2px solid white;
         }
 
         td, th {
-            border: 2px solid gray;
             padding: 10px;
+            border: 2px solid white;
         }
 
         .headt {
             font-size:  40px larger;
+            border: 2px solid white;
         }
 
         .bold {
             font-weight: bolder;
             font-size: larger;
+            border: 2px solid white;
         }
 
         .transp {
@@ -73,5 +77,11 @@ body {
     background-image: url(imagens/cool-technology-or-webside-banner-image-blue-background-_10568916.jpg!w700wp);
     background-repeat: no-repeat;
     background-size: cover;
+    display: block;
+    margin: 0px;
 }
-@media (min-width: 768px)
+@media (min-width: 768px) {
+    body {
+        background-color: white;
+    }
+}
