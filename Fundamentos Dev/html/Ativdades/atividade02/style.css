@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+:root {
+    cor1: #fff;
+    cor2: #f4f5ff;
+    cor3: #5025d1;
+    cor4: #00b67a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color:lightgray;
+}
+
+h1 {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    body {
+        background-color: white;
+    }
+}

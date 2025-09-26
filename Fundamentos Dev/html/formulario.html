@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+
+        body {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        h5 {
+            margin-left: 65px;
+        }
+        label, input {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form action="login.php" method="get">
+       <label for="usuario">Usuário</label> 
+       <br>
+       <input type="text" name="usuario" id="usuario">
+       <br>
+       <label for="senha">Senha</label>
+       <br>
+       <input type="password" name="senha" id="senha">
+       <br>
+       <h5>Sexo</h5>
+       <label for="masculino">Masculino</label>
+        <input type="radio"  name="sexo" id="sexom" value="M">
+       <label for="feminino">Feminino</label>
+       <input type="radio" name="sexo" id="sexof">
+       <br>
+       <br>
+       <label for="email">Email</label>
+       <input type="email" name="email" id="email">
+       <br>
+       <br>
+       <label for="cor">Cor</label>
+       <input type="color" name="cor" id="cor">
+       <br>
+       <br>
+       <label for="data">Data</label>
+       <input type="date" name="data" id="data">
+       <br>
+       <br>
+       <label for="numero">Numero</label>
+       <input type="number" name="numero" id="numero">
+       <br>
+       <br>
+       <label for="range"></label>
+       <input type="range" name="range" id="range">
+       <br>
+       <br>
+       <label for="time">Hora</label>
+       <input type="time" name="hora" id="hora">
+       <br>
+       <br>
+       <label for="semana">Semana</label>
+       <input type="week" name="semana" id="semana">
+       <br>
+       <br>
+       <input type="checkbox" name="confirmado" id="confirmado">
+       <label for="confirmado">Confirmo os dados acima!</label>
+       <br>
+       <br>
+       <input type="submit" value="Fazer Cadastro">
+    </form>
+</body>
+</html>
