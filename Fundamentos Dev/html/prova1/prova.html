@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Prática - HTML & CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imgs/codificacao.png" type="image/x-icon">
+</head>
+<body>
+    <div>
+        <h1>SITE DA PRIMEIRA PROVA</h1>
+    </div>
+    <h2>BOLETIM DE MATEMÁTICA DO TERCEIRÃO</h2>
+    <div class="container">
+            <table class="table">
+                <tr>
+                    <th>MATÉRIA</th>
+                    <th>ALUNO</th>
+                    <th>NOTA</th>
+                </tr>
+                <tr>
+                    <td class="mat" rowspan="3" scope="colgroup">Matemática</td>
+                    <td>Gustavo</td>
+                    <td class="green">10</td>
+                </tr>
+                <tr>
+                    <td>Daniela</td>
+                    <td class="green">10</td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td class="red">2,0</td>
+                </tr>
+                <tr>
+                    <th colspan="2" scope="colgroup">MÉDIA DOS ALUNOS</th>
+                    <td class="green">7,33</td>
+                </tr>
+            </table>
+    </div>
+    <p>Justificação da Nota da Maria: Maria não se empenhou nos estudos e ficou vendo o Flamengo jogar durante as aulas.
+    </p>
+    <p>
+        Se estiver mais interessado no Flamengo do que nos estudos também, acesse o site oficial: <a href="https://www.flamengo.com.br" target="_blank">www.flamengo.com.br
+    </p>
+    <div>
+       <p>Caso você queira estudar em vez de ver o Flamengo jogar, siga estas dicas:</p>
+         <ol>
+                <li>Estude todos os dias</li>
+                <li>Faça exercícios</li>
+                <li>Durma bem</li>
+                <li>Alimente-se bem</li>
+        </ol>
+    </div>
+    <div  id="git">
+        <table>
+            <tr class="tr">
+                <td><a href="https://github.com/gusta-vo-dev" target="_blank"><img src="imgs/github.png" alt="img/png" width="100px" class="github"></a></td>
+                <td class="textgit">Me siga no GitHub</td>
+            </tr>
+    </table>
+    </div>
+    <footer>
+        <p>Desenvolvido por: Gustavo Pickler Vieira</p>
+        <p>Data: 29/09/2024</p>
+    </footer>
+</body>
+</html>
