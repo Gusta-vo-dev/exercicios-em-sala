@@ -1,34 +1,41 @@
 Program ex_22 ;
 
-const max = 3;
+const max = 2;
+
 type
-    niver = record
-    	nome: string[40];
-    	dia: integer;
-    	mes: integer;
-    end;
-    
-    vet = array [1..30] of niver;
-    
-var data: vet;
-		i, j: integer;
-		
-Begin                         
+ 	reg_niver = record
+ 		nome:  string[15];
+ 		dia: integer;
+ 		mes: integer;
+ 	end;
+ 	
+ 	vet_niver = array[1..40] of reg_niver;
+ 	
+	var lista : vet_niver;
+			i, j: integer;	
+
+Begin
    for i:=1 to max do
+   with lista[i] do
    begin
-   		write ('Digite o nome da ', i,'ª pessoa: ');
-   		readln (data[i].nome);
-   		write ('Digite o dia de aniversário: ');
-   		readln ( data[i].dia);
-   		write ('Digite o mês de aniversário: ');
-   		readln (data[i].mes);
+   		writeln ('Digite o nome da ', i, 'ª pessoa: ');
+   		read ( nome );
+   		writeln ('Digite o dia do aniversário: ' );
+   		read ( dia );
+   		writeln ('Digite o mês do aniversário: ');
+   		read( mes );
    end;
    writeln;
    writeln;
    for i:=1 to 12 do
-   	 	for j:=1 to 12 do
-   	 	begin 
-   	 			if data[j].mes = i then
-   	 				writeln ('No mês ', i,' faz aniversário o(a): ', data[j].nome,'(',data[j].dia,'/',data[j].mes,')');
-      end;     
+   begin
+	   	for j:=1 to max do 
+		   	begin
+		   	   if (lista[j].mes = i)then
+		   	   		writeln ('No mês ',i,' o(a) ', lista[j].nome,'(',lista[j].dia,'/',lista[j].mes,') faz aniversário!');   		
+		   	end;
+			for j:=1 to 1 do
+					if (lista[1].mes <> i) and (lista[2].mes <> i) then
+							writeln ('No mês ', i,' não há ninguém que faz aniversário!');	
+	 end;
 End.
