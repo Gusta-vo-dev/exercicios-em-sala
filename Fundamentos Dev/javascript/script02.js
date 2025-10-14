@@ -15,7 +15,7 @@ for (let i = 0; i < 10; i++){
 
 let contador = 0;
 let fixo = 5;
-while (contador < 10){
+while (contador <= 10){
     let multi = contador * 5;
     console.log(fixo, ' x ', contador, ' = ', multi);
     contador = contador + 1;
