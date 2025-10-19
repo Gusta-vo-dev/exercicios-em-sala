@@ -22,7 +22,6 @@ function imovel(m2, metros, quartos){
 console.log( 'O preço do imóvel é: ' + m2 * metros);
 imovel ("3000", "100", "2");
 
-
 //Exercício 03
 let usuario = "pedro";
 let senha = "123";
