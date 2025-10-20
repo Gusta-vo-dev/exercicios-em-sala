@@ -1,14 +1,10 @@
-let nome = "Gustavo";
-let idade = 18;
-console.log("Meu nome é " + nome + " e eu tenho " + idade + " anos.");  
-
-function somar (5 3){
-    return 5 + 3;
+function somar(a, b){
+    let soma = a + b;
+    return soma;
 }
 
-let resultado = somar;
-console.log (resultado);
-somar (5, 3);
+let result = somar (9, 4);
+console.log(result);
 
 
-//INSTALAR CODE RUN - EXTENSÃO
+let idade = somar ( )

@@ -8,6 +8,7 @@ console.log(resultado);
 
 
 //exercício 02
+console.log('Ex.02');
 let m2 = "3000";
 let quartos = "2";
 function imovel(m2, metros, quartos){
@@ -19,9 +20,12 @@ function imovel(m2, metros, quartos){
     }
 }
 
-console.log( 'O preço do imóvel é: ' + m2 * metros);
 imovel ("3000", "100", "2");
+console.log('O preço do imóvel é: ' + m2 * metros);
 
+
+
+console.log("Ex.03");
 //Exercício 03
 let usuario = "pedro";
 let senha = "123";
