@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 01 de JavaScript</title>
+    <style>
+        body{
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: rgb(90, 87, 87);
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 50px;
+        }
+
+        .senha {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            height: 40px;
+            gap: 15px;
+        }
+
+        #senha {
+            padding-left: 10px;
+        }
+
+        .img {
+            display: flex;
+            justify-content: center;
+        }
+
+        .tam {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        #tamanhoimg {
+            padding: 10px 20px;
+        }
+
+        .mudar {
+            display: flex;
+            justify-content: center;
+        }
+
+        #mudar {
+            padding: 10px 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Minha Página Interativa</h1>
+    <div class="senha">
+        <input type="text" id="senha" placeholder="Digite sua Senha">
+        <button id="mostrar" onclick="mostrarsenha()">Mostrar Senha</button>
+    </div>
+    <br>
+    <br>
+    <div class="img">
+        <img src="imagens/carros-esportivos.jpeg" alt="img/png" width="300px">
+    </div>
+    <br>
+    <div class="tam">
+        <button id="tamanhoimg" onclick="tamanho()">+</button>
+        <button id="tamanhoimg" onclick="tamanho()">-</button>
+    </div>
+    <br>
+    <br>
+    <div class="mudar">
+        <button id="mudar" onclick="clicou()">Mudar a Cor</button>
+    </div>
+    <script src="script-desafio.js"></script>
+</body>
+</html>
