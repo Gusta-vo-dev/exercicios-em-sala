@@ -22,10 +22,6 @@ end;
 //Procedimento para escrever vetor
 procedure escreve_vetor (v:vetor; tam:integer);
 var i:integer;
-
-
-
-
 begin
   for i:=1 to tam do
   write (v[i], ' ');
