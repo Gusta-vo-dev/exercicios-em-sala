@@ -1,9 +1,14 @@
 Program Exemplo_Procedimentos;
 
+
+
 type vetor = array[1..5] of integer;
 
 var a, b:vetor;
 		tam_a, tam_b: integer;
+
+
+
 
 //Procedimento para ler vetor
 procedure ler_vetor (var v:vetor; tam: integer);
@@ -18,10 +23,16 @@ end;
 procedure escreve_vetor (v:vetor; tam:integer);
 var i:integer;
 
+
+
+
 begin
   for i:=1 to tam do
   write (v[i], ' ');
 end;
+
+
+
 
 //Programa Principal
 Begin
