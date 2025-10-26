@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinando JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #mensagem {
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid #333;
+            display: inline-block;
+            background-color: #fff;
+        }
+
+        .menormaior {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+        }
+
+        #mais {
+            background-color: black;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+
+        #menos {
+            background-color: black;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 10px 17px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Treinando JavaScript para a Prova!</h1>
+    <p id="mensagem">Clique no botão para ver uma mensagem especial.</p>
+    <button onclick="msg()" id="msg">Clique Aqui</button>
+    <br>
+    <br>
+    <img src="imagens/carros-esportivos.jpeg" alt="Imagem de Treinamento JavaScript" width="300px" id="carro">
+    <div class="menormaior">
+        <button onclick="clicou()" id="mais">
+           +
+        </button>
+        <button  onclick="clicou()" id="menos">
+            -
+        </button>
+    </div>
+    <script>
+        function msg() {
+            let mensagem = document.getElementById("mensagem");
+            mensagem.innerHTML = "Parabéns! Você está se saindo muito bem em JavaScript!";
+            mensagem.style.color = "blue";
+            mensagem.style.fontWeight = "bold";
+            mensagem.style.fontSize = "22px";
+        }
+        function clicou() {
+            let carro = document.getElementById("carro");
+            let estiloCarro = window.getComputedStyle(carro);
+            let larguraAtual = parseFloat(estiloCarro.width);
+
+            if (event.target.id === "mais") {
+                carro.style.width = (larguraAtual + 20) + "px";
+            } else if (event.target.id === "menos") {
+                carro.style.width = (larguraAtual - 20) + "px";
+            }
+        }
+    </script>
+</body>
+</html>
