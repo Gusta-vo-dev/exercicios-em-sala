@@ -7,10 +7,11 @@ var v: array[1..max] of integer;
 		ordem: string[1];
 		
 procedure vet_ordem (vetor: v; orde: string[1]);		
+	begin
+	   if orde = 'C' then
+	end;	
 		
-		
-		
-		
+
 Begin
   for i:=1 to 10 do
   begin
