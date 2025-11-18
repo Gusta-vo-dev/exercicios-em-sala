@@ -17,4 +17,5 @@ Begin
     readln ( dia );
     totald:= idade_dias ( ano, mes, dia );
     writeln ('O total de dias de sua vida é: ', totald);
+    writeln;
 End.

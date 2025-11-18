@@ -26,6 +26,7 @@ Begin
    end;
    writeln;
    writeln;
+   writeln;
    result:= somando( v );
    writeln ('A soma do vetor é: ', result:0:2); 
 End.

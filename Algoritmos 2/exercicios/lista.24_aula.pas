@@ -25,6 +25,7 @@ Begin
     	end;
     writeln;
     writeln;
+    writeln;
     result:= soma(vet);
     writeln ('A soma do vetor é: ', result); 
 End.

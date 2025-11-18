@@ -17,4 +17,5 @@ Begin
    		writeln ('Número é positivo!')
    else 
    		writeln ('Número é negativo!');
+   writeln;
 End.
