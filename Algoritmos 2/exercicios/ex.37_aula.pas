@@ -4,7 +4,7 @@ Program ex_37 ;
 	 
 	 function volume ( r: real ): real;
 	 begin
-	 		volume:= (4*3.14*r*r*r)/3;
+	 		volume:= 4/3*3.14*r*r*r;
 	 end;
 
 Begin
