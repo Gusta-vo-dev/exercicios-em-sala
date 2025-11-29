@@ -16,7 +16,7 @@ Program lista_8 ;
 	    		else if idade > 5 then
 		 					categ:= 'Infantil A'
 		 			else 
-		 					categ:= 'Não Classificado';
+		 					categ:= 'Não Classificado'; 
 	end;
 
 Begin
