@@ -6,7 +6,7 @@ type
 	vet = array[1..max] of integer;
 	
 var fila: Tfila;
-
+		valor,inicio,fim:integer;
 
 	procedure iniciar( var f: Tfila);
 	begin
@@ -14,7 +14,7 @@ var fila: Tfila;
 			f.fim:= 0;
 	end; 
 	
-	procedure inserir ( var f: Tfila; valor: integer);
+	procedure inserir ( var f: Tfila; var valor: integer);
 	begin
 	   if f.fim = max then
 	   		writeln('A fila está cheia!')
@@ -28,6 +28,6 @@ var fila: Tfila;
 	end;
 
 Begin
-  	inserir( 
-  	
+  	inserir(fila,12);
+  	writeln(val);
 End.
