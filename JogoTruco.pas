@@ -77,18 +77,6 @@ Program JogoTruco ;
             2: baral[i].forca := 9;  
             3: baral[i].forca := 10; 
         end;
-        case baral[i].carta of  //Atribui força as cartas//
-            4: baral[i].forca := 1;
-            5: baral[i].forca := 2;
-            6: baral[i].forca := 3;
-            7: baral[i].forca := 4;
-            10: baral[i].forca := 5;
-            11: baral[i].forca := 6;
-            12: baral[i].forca := 7; 
-            1: baral[i].forca := 8;  
-            2: baral[i].forca := 9;  
-            3: baral[i].forca := 10; 
-    		end;
 	   	if (baral[i].carta = manilha) then//Atribiu força especial à manilha//
         begin
             if baral[i].naipe = 'Ouro'    then
