@@ -159,6 +159,16 @@ Program JogoTruco ;
 		     writeln;
 	end; 
 	
+	function compararGanhador(c1, c2: iCarta): integer;
+	begin
+	    if c1.forca > c2.forca then
+	        compararGanhador := 1  { Jogador ganhou }
+	    else if c2.forca > c1.forca then
+	        compararGanhador := 2  { Computador ganhou }
+	    else
+	        compararGanhador := 0; { Empachou (Empate) }
+	end;
+	
 	
 	var  //Variável para o Baralho Geral//
 			baralho: iBaralho;
@@ -167,19 +177,87 @@ Program JogoTruco ;
 			maoJogador: iBaralho;
 			maoComputador: iBaralho;
 			joker: iCarta;
-			
-			
-			
-		//CÓDIGO PARA VERIFICAR QUEM GANHOU A RODADA//	
-	  //if cartaJogador.forca > cartaComputador.forca then
-    //writeln('Você ganhou essa queda!')
-		//else
-    //writeln('O computador ganhou essa queda!');
-    
+
+  var //Variáveis funcionais do jogo//
+    i, escolha, ganhou, quedasJ, quedasC: integer;
+    cartaJ, cartaC: iCarta;
+    cartasJogadas: array[1..3] of boolean; { Para não jogar a mesma carta duas vezes }
+
 Begin
-  inserirBaralho(  baralho );
-  embaralhar(baralho);
-  darCartas ( baralho, maoJogador, maoComputador, joker);
-  readln;
-  writeln 
+    { Preparação inicial }
+    inserirBaralho(baralho);
+    embaralhar(baralho);
+    darCartas(baralho, maoJogador, maoComputador, joker);
+    
+    quedasJ := 0;
+    quedasC := 0;
+    for i := 1 to 3 do cartasJogadas[i] := false;
+
+    writeln;
+    writeln('--- INICIO DA RODADA ---');
+
+    { Loop das 3 quedas }
+    for i := 1 to 3 do
+    begin
+        writeln;
+        writeln('>>> QUEDA ', i, ' <<<');
+        
+        { Mostra cartas disponíveis }
+        writeln('Suas cartas: ');
+        for ganhou := 1 to 3 do
+            if not cartasJogadas[ganhou] then
+                writeln(ganhou, ': ', maoJogador[ganhou].carta, ' de ', maoJogador[ganhou].naipe);
+
+        { Jogador escolhe }
+        repeat
+            write('Escolha o numero da carta para jogar: ');
+            readln(escolha);
+        until (escolha in [1..3]) and (not cartasJogadas[escolha]);
+        
+        cartasJogadas[escolha] := true;
+        cartaJ := maoJogador[escolha];
+        
+        { Computador joga (lógica simples: joga a primeira disponível) }
+        cartaC := maoComputador[i]; 
+
+        writeln('Voce jogou: ', cartaJ.carta, ' de ', cartaJ.naipe);
+        writeln('O PC jogou: ', cartaC.carta, ' de ', cartaC.naipe);
+
+        { Verifica quem ganhou a queda }
+        ganhou := compararGanhador(cartaJ, cartaC);
+        
+        if ganhou = 1 then
+        begin
+            writeln('VOCE GANHOU ESTA QUEDA!');
+            quedasJ := quedasJ + 1;
+        end
+        else if ganhou = 2 then
+        begin
+            writeln('O COMPUTADOR GANHOU ESTA QUEDA!');
+            quedasC := quedasC + 1;
+        end
+        else
+            writeln('EMPACHOU!');
+
+        { Verifica se alguém já ganhou a melhor de 3 }
+        if quedasJ = 2 then 
+        begin
+            writeln('--- FIM DE JOGO: VOCE VENCEU O MARRECO! ---');
+            break;
+        end;
+        if quedasC = 2 then 
+        begin
+            writeln('--- FIM DE JOGO: O COMPUTADOR VENCEU! ---');
+            break;
+        end;
+    end;
+
+    if (quedasJ < 2) and (quedasC < 2) then
+    begin
+        if quedasJ > quedasC then writeln('VOCE VENCEU NO DESEMPATE!')
+        else if quedasC > quedasJ then writeln('PC VENCEU NO DESEMPATE!')
+        else writeln('A RODADA TERMINOU EMPATADA!');
+    end;
+
+    readln;
 End.
