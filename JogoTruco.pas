@@ -140,10 +140,10 @@ Program JogoTruco;
 	  writeln('          A MANILHA DA RODADA É O: ', manilha);
 	  writeln('          =========================================');
 	  writeln;
-		writeln ('          Placar:   Você ', quedasJ, ' x ', quedasC, ' Computador');
+		writeln('          Placar:   Você ', quedasJ, ' x ', quedasC, ' Computador');
 	end;
 	
-	procedure rodada(var maoJ, maoC: iBaralho; manilha: integer );
+	procedure rodada(var maoJ, maoC: iBaralho; manilha, pontos_rodada: integer);
 	var
 	  i, escolha, ptsJ, ptsC, quedasJ, quedasC: integer;
 	  usadaJ, usadaC: array[1..3] of boolean;
@@ -177,12 +177,12 @@ Program JogoTruco;
 	    writeln('          PC jogou: ', cartaC.carta, ' de ', cartaC.naipe);	
 	    if cartaJ.forca > cartaC.forca then
 	    begin
-	      writeln('          >> Você venceu está queda!');
+	      writeln('          >> Você venceu essa queda!');
 	      quedasJ := quedasJ + 1;
 	    end
 	    else if cartaC.forca > cartaJ.forca then
 	    begin
-	      writeln('          >> Computador venceu esta queda!');
+	      writeln('          >> Computador venceu essa queda!');
 	      quedasC := quedasC + 1;
 	    end
 	    else
@@ -214,18 +214,17 @@ Program JogoTruco;
 	end;
 	
 	
-	
-	
 	var
 	  baralho: iBaralho;
 	  maoJogador: iBaralho;
 	  maoComputador: iBaralho;
 	  joker: iCarta;
 	  manilha: integer;
+	  pontos_rodada: integer;
 	
 Begin
   inserirBaralho(baralho);
   embaralhar(baralho);
   darCartas(baralho, maoJogador, maoComputador, joker, manilha);
-  rodada(maoJogador, maoComputador, manilha);
+  rodada(maoJogador, maoComputador, manilha, pontos_rodada);
 End.
