@@ -133,6 +133,42 @@ Program JogoTruco;
 	  end;
 	end;
 	
+	procedure truco(var pontos_rodada: integer; var quemTrucou: string; quemPede: string; var fugiu: boolean);
+	var
+	  opcao: integer;
+	  adversario: string;
+	begin	  
+	  writeln;
+	  writeln('          --- O ', quemPede, ' PEDIU TRUCO! ---');
+	  writeln('          ---      O que deseja fazer?      ---');
+	  writeln('          1 - Aceitar   2 - Correr (Fugir)   3 - Pedir ', pontos_rodada + 3);
+	  if pontos_rodada < 12 then
+	    writeln('          3 - Pedir ', pontos_rodada + 3);
+	  repeat
+	    write('          Escolha: ');
+	    readln(opcao);
+	  until (opcao in [1, 2]) or ((opcao = 3) and (pontos_rodada < 12));
+	  case opcao of
+	    1: begin //Opção para aceitar//
+	         pontos_rodada := pontos_rodada + 2;
+	         quemTrucou := quemPede;
+	         writeln('          Jogo aceito! Valendo ', pontos_rodada);
+	       end;
+	    2: begin //Opção para correr//
+	         fugiu := true;
+	         writeln('          O ', adversario, ' correu! O ', quemPede, ' leva a rodada.');
+	       end;
+	    3: begin //Opção para retrucar//
+	         pontos_rodada := pontos_rodada + 3;
+	         quemTrucou := quemPede;
+	         if quemPede = 'J' then 
+	            truco(pontos_rodada, quemTrucou, 'C', fugiu)
+	         else 
+	            truco(pontos_rodada, quemTrucou, 'J', fugiu);
+	       end;
+	  end;
+	end;
+	
 	procedure mostraCabecalho ( quedasJ, quedasC: integer; manilha: integer);
 	begin
 	  writeln;
@@ -143,16 +179,47 @@ Program JogoTruco;
 		writeln('          Placar:   Você ', quedasJ, ' x ', quedasC, ' Computador');
 	end;
 	
-	procedure rodada(var maoJ, maoC: iBaralho; manilha, pontos_rodada: integer);
+	procedure rodada(var maoJ, maoC: iBaralho; manilha: integer);
 	var
-	  i, escolha, ptsJ, ptsC, quedasJ, quedasC: integer;
+	  i, escolha, ptsJ, ptsC, quedasJ, quedasC, pontos_rodada: integer;
 	  usadaJ, usadaC: array[1..3] of boolean;
 	  cartaJ, cartaC: iCarta;
-	begin  
+	  fugiu: boolean;
+	  quemTrucou: string;
+	begin 
+	  pontos_rodada := 1;
+	  quedasJ := 0; 
+		quedasC := 0;
+	  fugiu := false;
+	  quemTrucou := 'N'; 
 	  for i := 1 to 3 do 
 			usadaJ[i] := false;
 	  for i := 1 to 3 do 
 			usadaC[i] := false;
+	  for i := 1 to 3 do
+	  begin
+	    // ... (Cabeçalho omitido para brevidade)
+	    
+	    writeln('          [ T - Pedir Truco ]');
+	    write('          Escolha uma carta (1-3): ');
+	    
+	    // Lógica para ler se o usuário quer Trucar ou Jogar Carta
+	    // Nota: Recomendo usar ReadKey para capturar 'T' ou números
+	    
+	    { Exemplo de verificação de Truco }
+	    if (quemTrucou <> 'J') and (pontos_rodada < 12) then
+	    begin
+	       // Se o jogador digitar um comando para trucar:
+	       // truco(pontos_rodada, quemTrucou, 'J', fugiu);
+	    end;
+	
+	    if fugiu then break; // Se alguém correu, encerra a rodada imediatamente
+	
+	    // ... (Restante da lógica de comparação de cartas)
+	  end;
+	  
+	  // Ao final, atribui os pontos_rodada ao vencedor do set
+		end;
 	  for i := 1 to 3 do
 	  begin	   
 	    writeln;
@@ -220,11 +287,10 @@ Program JogoTruco;
 	  maoComputador: iBaralho;
 	  joker: iCarta;
 	  manilha: integer;
-	  pontos_rodada: integer;
 	
 Begin
   inserirBaralho(baralho);
   embaralhar(baralho);
   darCartas(baralho, maoJogador, maoComputador, joker, manilha);
-  rodada(maoJogador, maoComputador, manilha, pontos_rodada);
+  rodada(maoJogador, maoComputador, manilha);
 End.
