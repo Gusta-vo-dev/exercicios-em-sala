@@ -433,7 +433,7 @@ Program JogoTruco;
 			        writeln('          ', escolha, ': ', maoJ[escolha].carta, ' de ', maoJ[escolha].naipe);
 			    if (quemPede = 'J') or ( quemPede = 'N' ) and ( pontos_rodada < 12 ) and ( pontosC < 11 ) and ( pontosJ < 11 ) then
 			    begin
-						if quedasC = 0 then //Condições para Computador pedir truco//
+						  if quedasC = 0 then //Condições para Computador pedir truco//
 								sortTrucoC:= random(4) + 1
 							else
 								sortTrucoC:= random(4) + 2;
