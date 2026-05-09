@@ -16,8 +16,10 @@ Program JogoTruco;
 	begin
 	  writeln('          BARALHO INICIADO E EMBARALHADO. BORA PRO JOGO!');
 	  writeln;
-	  naipes[1]:= 'Paus'; naipes[2]:= 'Copas';
-	  naipes[3]:= 'Espadas'; naipes[4]:= 'Ouro';
+	  naipes[1]:= 'Paus'; 
+	  naipes[2]:= 'Copas';
+	  naipes[3]:= 'Espadas'; 
+	  naipes[4]:= 'Ouro';
 	  x:= 1;
 	  for i:= 1 to 12 do 
 	    for n:= 1 to 4 do
@@ -47,7 +49,7 @@ Program JogoTruco;
 	procedure inserirForca(var baral: iBaralho; jok: iCarta; var manilha: integer);
 	var i: integer;
 	begin
-	  // Lógica da Manilha (Próxima carta após a vira)
+	  // Lï¿½gica da Manilha (Prï¿½xima carta apï¿½s a vira)
 	  case jok.carta of
 	    7:  manilha := 10; 
 	    10: manilha := 11; 
@@ -74,10 +76,14 @@ Program JogoTruco;
 	
 	    if (baral[i].carta = manilha) then
 	    begin
-	      if baral[i].naipe = 'Ouro'    then baral[i].forca := 11;
-	      if baral[i].naipe = 'Espadas' then baral[i].forca := 12;
-	      if baral[i].naipe = 'Copas'   then baral[i].forca := 13;
-	      if baral[i].naipe = 'Paus'    then baral[i].forca := 14;
+	      if baral[i].naipe = 'Ouro'    then 
+		  	baral[i].forca := 11;
+	      if baral[i].naipe = 'Espadas' then 
+		  	baral[i].forca := 12;
+	      if baral[i].naipe = 'Copas'   then 
+		  	baral[i].forca := 13;
+	      if baral[i].naipe = 'Paus'    then 
+		  	baral[i].forca := 14;
 	    end;
 	  end;
 	end;
@@ -87,11 +93,11 @@ Program JogoTruco;
 			novoBaralho: iBaralho;
 	begin
 	  x := 1;
-		if quemCorta = true then //Defini se quem corta é o jogador ou o computador//
+		if quemCorta = true then //Defini se quem corta ï¿½ o jogador ou o computador//
 		begin
 			writeln('          ======================================');  
 		  repeat
-		    write('          Sua vez de cortar o baralho(1 à 40): ');
+		    write('          Sua vez de cortar o baralho(1 ï¿½ 40): ');
 		    readln(corte);
 		  until (corte >= 1) and (corte <= 40);
 		  writeln('          ======================================');
@@ -100,7 +106,7 @@ Program JogoTruco;
 		begin
 			corte:= random(39) + 1;
 			writeln('          ======================================');
-			writeln ('          O computador cortou na posição ', corte, '!');
+			writeln ('          O computador cortou na posiï¿½ï¿½o ', corte, '!');
 			writeln('          ======================================'); 
 		end;
 			
@@ -127,7 +133,7 @@ Program JogoTruco;
 	  
 	  for i := 1 to 6 do
 	  begin
-	    if (i mod 2 = 1) then  //Condição para alternar quem começa recebendo as cartas//
+	    if (i mod 2 = 1) then  //Condiï¿½ï¿½o para alternar quem comeï¿½a recebendo as cartas//
 	    begin
 	      maoJ[posiJ] := baral[i];
 	      posiJ := posiJ + 1;
@@ -160,12 +166,12 @@ Program JogoTruco;
 			 if (s in [1..2]) or (s2 in [1..2]) then
 			 begin //Computador aceita truco//
 			 		pontos_rodada:= aux_pontos;
-		      writeln('          Jogo aceito! Valendo ', pontos_rodada);
+		      writeln('ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ Jogo aceito! Valendo ', pontos_rodada);
 			 end
 			 else if (s in [3..4]) or (s2 = 3) then
 			 begin //Computador fugiu do pedido de truco//
 			 		fugiu := true;
-		      writeln('          O ', adversario, ' correu! Você levou a rodada.');
+		      writeln('ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ O ', adversario, ' correu! Vocï¿½ levou a rodada.');
 			 end
 			 else if ( s = 5 ) and ( pontos_rodada < 9 ) then
 			 begin    //Computador retrucou//
@@ -178,34 +184,34 @@ Program JogoTruco;
 		end
 		else
 		begin
-			adversario:= 'Você';
+			adversario:= 'Vocï¿½';
 			writeln;
 			if pontos_rodada = 1 then	
-				writeln('          --- O COMPUTADOR PEDIU TRUCO! ---')
+				writeln('ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ --- O COMPUTADOR PEDIU TRUCO! ---')
 			else if pontos_rodada = 3 then
-				writeln('          --- O COMPUTADOR PEDIU SEIS! ---')
+				writeln('ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ --- O COMPUTADOR PEDIU SEIS! ---')
 			else if pontos_rodada = 6 then
-				writeln('          --- O COMPUTADOR PEDIU NOVE! ---')
+				writeln('ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ --- O COMPUTADOR PEDIU NOVE! ---')
 			else
-				writeln('          --- O COMPUTADOR PEDIU DOZEEE! ---');
-			writeln('          --- O que deseja fazer? ---');
-			write('          1 - Aceitar   2 - Correr  ');
+				writeln('ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ --- O COMPUTADOR PEDIU DOZEEE! ---');
+			writeln('ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ --- O que deseja fazer? ---');
+			write('ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ 1 - Aceitar   2 - Correr  ');
 			if pontos_rodada < 9 then
 					writeln(' 3 - Pedir ', aux_pontos + 3);
 			repeat
-			    write('          Escolha: ');
+			    write('ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ Escolha: ');
 			    readln(opcao);
 			until (opcao in [1, 2]) or ((opcao = 3) and (pontos_rodada < 9));
 		  case opcao of
-		    1: begin //Opção para aceitar//
+		    1: begin //Opï¿½ï¿½o para aceitar//
 		         pontos_rodada:= aux_pontos;
-		         writeln('          Jogo aceito! Valendo ', pontos_rodada);
+		         writeln('ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ Jogo aceito! Valendo ', pontos_rodada);
 		       end;
-		    2: begin //Opção para correr//
+		    2: begin //Opï¿½ï¿½o para correr//
 		         fugiu := true;
-		         writeln('          ' ,adversario, ' correu! O Computador leva a rodada.');
+		         writeln('ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ ' ,adversario, ' correu! O Computador leva a rodada.');
 		       end;
-		    3: begin //Opção para retrucar//
+		    3: begin //Opï¿½ï¿½o para retrucar//
 		         pontos_rodada:= aux_pontos;
 						 aux_pontos:= aux_pontos + 3; 
 						 quemTrucou:= 'J';      
@@ -227,14 +233,14 @@ Program JogoTruco;
 	  if (pontosJ = 11) and (pontosC < 11) then
 	  begin
 	  	writeln;
-	    writeln('          -----  VOCÊ CHEGOU EM MÃO DE ONZE! ----');
+	    writeln('          -----  VOCï¿½ CHEGOU EM Mï¿½O DE ONZE! ----');
 	    writeln;
-	    writeln('          Sua mão:');
+	    writeln('          Sua mï¿½o:');
 	    for i := 1 to 3 do
 	      writeln('          ', i, ': ', maoJ[i].carta, ' de ', maoJ[i].naipe);
 	    writeln;
 	    writeln('          Deseja aceitar a partida valendo 3 pontos?');
-	    write('          1 - Sim    2 - Não ');
+	    write('          1 - Sim    2 - Nï¿½o ');
 	    writeln;
 	    repeat           
 	      readln(opcao);
@@ -245,7 +251,7 @@ Program JogoTruco;
 	    else
 	    begin
 	    	writeln;
-	      writeln('          Você recusou. O Computador ganhou 1 ponto');
+	      writeln('          Vocï¿½ recusou. O Computador ganhou 1 ponto');
 	      writeln;
 	      pontosC := pontosC + 1;
 	      fugiu := true;
@@ -256,22 +262,22 @@ Program JogoTruco;
 	  else if (pontosC = 11) and (pontosJ < 11) then
 	  begin
 	  	writeln;
-	    writeln('          -----  MÃO DE ONZE DO COMPUTADOR! ----');
+	    writeln('          -----  MÃƒO DE ONZE DO COMPUTADOR! ----');
 	    writeln;
-	    for i := 1 to 3 do //Lógica do computador, se a média for boa, ele aceita//
+	    for i := 1 to 3 do //Lï¿½gica do computador, se a mï¿½dia for boa, ele aceita//
 				somaForca := somaForca + maoC[i].forca;
 	    
 	    if somaForca >= 18 then 
 	    begin
 	    	writeln;
-	      writeln('          O Computador analisou as cartas e ACEITOU a mão de onze!');
+	      writeln('          O Computador analisou as cartas e ACEITOU a mÃ£o de onze!');
 	      writeln;
 	      pontos_rodada := 3;
 	    end
 	    else
 	    begin
 	    	writeln;
-	      writeln('          O Computador CORREU da mão de onze. Você ganhou 1 ponto');
+	      writeln('          O Computador CORREU da mÃ£o de onze. VocÃª ganhou 1 ponto');
 	      writeln;
 	      pontosJ := pontosJ + 1;
 	      fugiu := true;
@@ -285,11 +291,11 @@ Program JogoTruco;
 	  writeln;
 	  textcolor(lightblue);
 		  writeln('          ==========================================');
-		  writeln('          PONTUAÇÃO GERAL: Você ', pontosJ, ' x ' ,pontosC, ' Computador');
+		  writeln('          PONTUAï¿½ï¿½O GERAL: Vocï¿½ ', pontosJ, ' x ' ,pontosC, ' Computador');
 		  writeln('          ==========================================');
 		textcolor(lightgray);
-		  writeln('          A MANILHA DA RODADA É O: ', manilha);
-			writeln('          Placar da Rodada:   Você ', quedasJ, ' x ', quedasC, ' Computador');
+		  writeln('          A MANILHA DA RODADA ï¿½ O: ', manilha);
+			writeln('          Placar da Rodada:   Vocï¿½ ', quedasJ, ' x ', quedasC, ' Computador');
 			writeln('          Rodada Valendo: ', pontos_rodada);
 		  writeln('          ==========================================');
 	  writeln;
@@ -307,7 +313,7 @@ Program JogoTruco;
 	  condEmpate:= 0;
 	  pontos_rodada:= 1;
 	  fugiu:= false;
-	  if (pontosJ = 11) or (pontosC = 11) and not( pontosC = pontosJ ) then //Entrada para caso haja mão de onze//
+	  if (pontosJ = 11) or (pontosC = 11) and not( pontosC = pontosJ ) then //Entrada para caso haja mï¿½o de onze//
 	  begin
 	    mostraCabecalho ( quedasJ, quedasC, manilha, pontos_rodada, pontosC, pontosJ );
 	    maoDeOnze(pontosJ, pontosC, pontos_rodada, fugiu, maoJ, maoC);
@@ -331,11 +337,11 @@ Program JogoTruco;
 	  begin
 		  mostraCabecalho ( quedasJ, quedasC, manilha, pontos_rodada, pontosC, pontosJ );	   
 	    writeln;
-	    writeln('          --- ', i, 'ª QUEDA ---');
+	    writeln('          --- ', i, 'ï¿½ QUEDA ---');
 	    if (quemComeca = true) then
 	    begin
 			    writeln;
-			    writeln('          Sua mão:');         
+			    writeln('          Sua mï¿½o:');         
 			    for escolha := 1 to 3 do
 			      if not usadaJ[escolha] then
 			        writeln('          ', escolha, ': ', maoJ[escolha].carta, ' de ', maoJ[escolha].naipe); 
@@ -345,7 +351,7 @@ Program JogoTruco;
 					    begin
 					      if ( pontosC < 11 ) and ( pontosJ < 11 ) and ( pontos_rodada <> 12 ) then
 					      begin
-								  write('          Você deseja Trucar( S- Sim   N- Não): ');
+								  write('          Vocï¿½ deseja Trucar( S- Sim   N- Nï¿½o): ');
 						      readln( esc_truco );
 						      if (esc_truco = 'S') or (esc_truco = 's') then
 						      begin
@@ -386,7 +392,7 @@ Program JogoTruco;
 					  end;   	    
 				  if (quemPede = 'J') or (quemPede = 'N') and ( pontos_rodada < 12 ) and ( pontosC < 11 ) and ( pontosJ < 11 ) then
 				  begin
-					  if quedasC = 0 then //Condições para Computador pedir truco//
+					  if quedasC = 0 then //Condiï¿½ï¿½es para Computador pedir truco//
 							sortTrucoC:= random(5) + 1
 						else
 							sortTrucoC:= random(4) + 2;
@@ -420,20 +426,20 @@ Program JogoTruco;
 			    usadaC[escolha] := true;
 			    cartaC := maoC[escolha];
 			    writeln;
-			    writeln('          Você jogou: ', cartaJ.carta, ' de ', cartaJ.naipe);
+			    writeln('          Vocï¿½ jogou: ', cartaJ.carta, ' de ', cartaJ.naipe);
 			    writeln;
 			    writeln('          Computador jogou: ', cartaC.carta, ' de ', cartaC.naipe);
 					writeln;
 			end
-			else //Condição caso quem começa seja o computador//
+			else //Condiï¿½ï¿½o caso quem comeï¿½a seja o computador//
 			begin
-			    writeln('          Sua mão:');         
+			    writeln('          Sua mï¿½o:');         
 			    for escolha := 1 to 3 do
 			      if not usadaJ[escolha] then
 			        writeln('          ', escolha, ': ', maoJ[escolha].carta, ' de ', maoJ[escolha].naipe);
 			    if (quemPede = 'J') or ( quemPede = 'N' ) and ( pontos_rodada < 12 ) and ( pontosC < 11 ) and ( pontosJ < 11 ) then
 			    begin
-						if quedasC = 0 then //Condições para Computador pedir truco//
+						if quedasC = 0 then //Condiï¿½ï¿½es para Computador pedir truco//
 								sortTrucoC:= random(4) + 1
 							else
 								sortTrucoC:= random(4) + 2;
@@ -475,7 +481,7 @@ Program JogoTruco;
 					  begin
 					    	if ( pontosC < 11 ) and ( pontosJ < 11 ) and ( pontos_rodada <> 12 ) then
 					    	begin
-								  write('          Você deseja Trucar( S- Sim   N- Não): ');
+								  write('          Vocï¿½ deseja Trucar( S- Sim   N- Nï¿½o): ');
 						      readln( esc_truco );
 						      if (esc_truco = 'S') or (esc_truco = 's') then
 						      begin
@@ -512,7 +518,7 @@ Program JogoTruco;
 					usadaJ[escolha]:= true;
 					cartaJ:= maoJ[escolha];
 					writeln;
-					writeln('          Você jogou: ', cartaJ.carta, ' de ', cartaJ.naipe);
+					writeln('          Vocï¿½ jogou: ', cartaJ.carta, ' de ', cartaJ.naipe);
 					writeln;
 			end;
 			
@@ -520,7 +526,7 @@ Program JogoTruco;
 			begin		
 		    if cartaJ.forca > cartaC.forca then
 		    begin
-		      writeln('          >> Você venceu essa queda!');
+		      writeln('          >> Vocï¿½ venceu essa queda!');
 		      quedasJ:= quedasJ + 1;
 		      quemComeca:= true;
 		      if ( i = 1) then
@@ -539,7 +545,7 @@ Program JogoTruco;
 		      writeln('          >> Empatou!');
 					quedasC := quedasC + 1;
 					quedasJ := quedasJ + 1;
-					condEmpate:= condEmpate + 1; //Condição para caso empatar uma ou duas rodadas//	
+					condEmpate:= condEmpate + 1; //Condiï¿½ï¿½o para caso empatar uma ou duas rodadas//	
 		    end;
 		  end;
 		  fugiu:= false;
@@ -600,9 +606,9 @@ Program JogoTruco;
 	    writeln;                    
 	    writeln('          ======================');
 	    if pontosC >= 12 then
-	    	writeln ('          VOCÊ PERDEU À PARTIDA!')
+	    	writeln ('          VOCï¿½ PERDEU ï¿½ PARTIDA!')
 	    else 
-	    	writeln ('          VOCÊ VENCEU À PARTIDA!');
+	    	writeln ('          VOCï¿½ VENCEU ï¿½ PARTIDA!');
 	    writeln('          ======================');
 	    readkey;                                         
 	end;
