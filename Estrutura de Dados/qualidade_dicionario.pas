@@ -1,4 +1,4 @@
-Program dicionario; 
+Program qualidade_dicionario; 
 
 	type 
 		ponteiro = ^chave;
@@ -15,14 +15,15 @@ Program dicionario;
 	  	prox: ptno;
 	  end;
 	  
-	var lista_chave: ponteiro;
+	var lista_chave, tail: ponteiro;
 			lista_segundaria: ptno;
 			palavra: string[20];
 			op: byte;
 	
-	procedure criar_dicionario( var list_c: ponteiro; var list_s: ptno);
+	procedure criar_dicionario( var list_c: ponteiro; var calda: ponteiro; var list_s: ptno);
 	begin
 		 list_c:= nil;
+		 calda:= nil;
 		 list_s:= nil;
 	end;
 	
@@ -34,18 +35,12 @@ Program dicionario;
 			pal:= upcase(pal);
 	end;
 	
-	procedure inserir_chave ( var list_c: ponteiro );
-	var aux, aux2, anterior: ponteiro;
+	procedure inserirChave ( var list_c: ponteiro; var calda: ponteiro);
+	var aux, aux2, aux3: ponteiro;
 			i, tam: integer;
 			p: string;
 			cont: boolean;
 	begin
-	   repeat
-			 write (' Digite a quantidade de palavras que você deseja ter em seu dicionário( MÁX = 5 ): ');
-			 readln ( tam );
-		 until ( tam in [1..5] );
-		 for i:=1 to tam do 
-		 begin
 		 		leitura ( p );
 		 		new(aux);
 		 		aux2:= list_c;
@@ -54,29 +49,29 @@ Program dicionario;
 		 		   aux^.dado:= p;
 		 			 aux^.prox:= list_c;
 		 			 list_c:= aux;
+		 			 
 		 		end
 		 		else
 		 		begin 
 		 		   while (aux2^.dado < p) and (aux2 <> nil) do
 		 		   begin
-		 		   		anterior:= aux2;
+		 		   		antes:= aux2;
 		 		   		aux2:= aux2^.prox;
 		 		   end;
 		 		   aux^.dado:= p;
 		 		   aux^.prox:= aux2;
-		 		   anterior^.prox:= aux;
+		 		   antes^.prox:= aux;
 		 		end;
-		 end;
 	end;
 	
-  procedure inserirDic( list_s: ptno);
+  procedure inserirDic( var list_c: ponteiro; var list_s: ptno );
   var aux, aux2: ptno;
   begin
   		
   end;
 	  	
 
-	procedure consulta ( list_c: ponteiro);
+	procedure escreverDic ( list_c: ponteiro);
 	var aux: ponteiro;
 	begin
 			aux:= list_c;
@@ -91,27 +86,29 @@ Program dicionario;
 	end; 
 
 Begin
-  criar_dicionario ( lista_chave, lista_segundaria );
-  inserir_chave ( lista_chave );
+  criar_dicionario ( lista_chave, tail, lista_segundaria );
   while true do
   begin
   	writeln;
   	writeln (' 0 - Fechar Dicionário');
-  	writeln (' 1 - Inserir Palavras no Dicionário');
-  	writeln (' 2 - Remover Palavras do Dicionário');
-  	writeln (' 3 - Consultar Dicionário');
-  	writeln (' 4 - Escrever o Dicionário');
+  	writeln (' 1 - Inserir Palavra-Chave');
+  	writeln (' 2 - Inserir Palavras no Dicionário');
+  	writeln (' 3 - Remover Palavras do Dicionário');
+  	writeln (' 4 - Consultar Dicionário');
+  	writeln (' 5 - Escrever o Dicionário');
   	writeln;
   	repeat
   		write (' Escolha uma opção para sua lista: ');
   	  readln ( op );
-  	until ( op in [0..3] );
+  	until ( op in [0..5] );
   	writeln;
     case op of
       0: halt;
-      1: inserir;
-      2: writeln;
-      3: consulta( lista_chave );
+      1: inserirChave ( lista_chave, tail );
+      2: inserirDic ( lista_chave, lista_segundaria );
+      3: writeln;
+      4: writeln;
+      5: escreverDic( lista_chave );
     end;
     readkey;
     clrscr;
