@@ -1,3 +1,38 @@
+<<<<<<< HEAD
+Program Program_1 ;
+
+const max=3;
+
+type 
+	vet = array[1..max] of integer;
+	
+var fila: Tfila;
+		valor,inicio,fim:integer;
+
+	procedure iniciar( var f: Tfila);
+	begin
+			f.inicio:= 1;
+			f.fim:= 0;
+	end; 
+	
+	procedure inserir ( var f: Tfila; var valor: integer);
+	begin
+	   if f.fim = max then
+	   		writeln('A fila está cheia!')
+	   else
+	   begin
+	   		if f.inicio = 0 then 
+				 	f.inicio:= 1;
+				f.fim:= f.fim + 1;
+				f.dados[f.fim]:= valor;
+	   end;		
+	end;
+
+Begin
+  	inserir(fila,12);
+  	writeln(val);
+End.
+=======
 Program Pzim ;
    
 	const max = 6;
@@ -86,3 +121,4 @@ Begin
       until ( op = 0 );
 End.
 
+>>>>>>> b752098bcf8208693c4836a3109bf4977994a104
