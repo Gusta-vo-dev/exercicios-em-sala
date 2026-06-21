@@ -30,7 +30,7 @@ Program qualidade_dicionario;
 	procedure leitura ( var pal: string );
 	begin
 			writeln;
-			write (' Digite a palavra que você deseja inserir: ');
+			write (' Digite a palavra que vocÃª deseja inserir: ');
 			readln ( pal );
 			pal:= upcase(pal);
 	end;
@@ -90,15 +90,15 @@ Begin
   while true do
   begin
   	writeln;
-  	writeln (' 0 - Fechar Dicionário');
+  	writeln (' 0 - Fechar Dicionï¿½rio');
   	writeln (' 1 - Inserir Palavra-Chave');
-  	writeln (' 2 - Inserir Palavras no Dicionário');
-  	writeln (' 3 - Remover Palavras do Dicionário');
-  	writeln (' 4 - Consultar Dicionário');
-  	writeln (' 5 - Escrever o Dicionário');
+  	writeln (' 2 - Inserir Palavras no Dicionï¿½rio');
+  	writeln (' 3 - Remover Palavras do Dicionï¿½rio');
+  	writeln (' 4 - Consultar Dicionï¿½rio');
+  	writeln (' 5 - Escrever o Dicionï¿½rio');
   	writeln;
   	repeat
-  		write (' Escolha uma opção para sua lista: ');
+  		write (' Escolha uma opï¿½ï¿½o para sua lista: ');
   	  readln ( op );
   	until ( op in [0..5] );
   	writeln;
