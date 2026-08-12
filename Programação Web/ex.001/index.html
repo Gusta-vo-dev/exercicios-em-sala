@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primeiro Arquivo de Programação Web</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Olá, Mundo!</h1>
-    <p>Bem-vindo à programação web!</p>
+    <br>
+    <div id="login">
+        <h2>Log In</h2>
+        <form action="tokenLogin.php" method="post">
+            <content id="janela_flutuante">
+                <label for="Email">Nome de Usuário</label>
+                <input type="email" id="username" name="Email" required autocomplete="email">
+            </content>
+            <br><br>
+            <content id="janela_flutuante">
+                <label for="senha">Senha:</label>
+                <input type="password" id="password" name="senha" required autocomplete="current-password">
+            </content>
+            <br><br>
+            <input type="submit" value="Entrar">
+        </form>
+    </div>
 </body>
 </html>
