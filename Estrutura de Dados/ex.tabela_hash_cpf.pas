@@ -114,7 +114,7 @@ Program tabela_hash ;
   	 if aux = nil then
   	 	 verifica_se_existe:= false // Retorna falso caso o CPF não esteja inserido ainda //
   	 else 
-  	 	 verifica_se_existe:= true  // Retorna verdadeiro caso o CPF esteja inserido ainda //
+  	 	 verifica_se_existe:= true  // Retorna verdadeiro caso o CPF esteja inserido //
   end; 
 	
 	procedure insere_tabela_hash ( var tab: tabela_hash; iCpf: string); // Insere CPF na tabela hash //
@@ -168,8 +168,8 @@ Program tabela_hash ;
 	  	aux := tab[indice];
 			while (aux <> nil ) and (aux^.dado <> cpf) do
 			  aux:= aux^.prox;
-			if aux = nil then // Caso tenha rodado a lista encadeada e não encontrado o CPF digitado para consulta //
-				writeln (' CPF não encontrado!') 
+			if aux = nil then // Caso tenha percorrido a lista encadeada e não encontrado o CPF digitado para consulta //
+				writeln (' O CPF digitado não está na lista!') 
 			else 
 				writeln(' CPF encontrado na tabela no índice: ', indice);
 		end
@@ -215,19 +215,20 @@ Begin
   begin
 	  writeln(' 0 - Encerrar Programa');
 	  writeln(' 1 - Inserir CPF na Tabela');
-	  writeln(' 2 - Consultar CPF na Tabela');
+	  writeln(' 2 - Remover CPF da tabela');
 	  writeln(' 3 - Verifica se CPF é Válido');
-	  writeln(' 4 - Imprimir toda a tabela');
+	  writeln(' 4 - Consultar CPF na Tabela');
+	  writeln(' 5 - Escreve toda a tabela');
 	  repeat
 	    writeln;
 	    write (' Escolha uma opção: ');
 	    readln ( op );
 	    writeln;
-	  until ( op in [0..4]);
+	  until ( op in [0..5]);
 	  case op of
 	    0: halt;
 	  	1: proc_principal( tabela );
-	  	2: consulta_cpf ( tabela );
+	  	2: remove_cpf_da_tabela;
 	  	3: begin
 				 	ler_cpf ( cpf );
 				 	if valida_cpf( cpf ) = true then
@@ -235,7 +236,8 @@ Begin
 				  else
 				  	writeln (' O CPF digitado não é válido!');
 				 end;
-			4: imprimir_tabela ( tabela );
+	  	4: consulta_cpf ( tabela );
+			5: imprimir_tabela ( tabela );
 	  end;
 	  writeln;
 	  write(' Clique em qualquer tecla para prosseguir...'); 
