@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Página para a comunidade interessada sobre a Noz Pecan. Acesse os link, envie sugestões">
+    <meta name="keywords" content="Noz Pecan, UNIDAVI, Sistemas dfe Informação, BSN, Fruta">
+    <meta name="author" content="Prof. M.e Sandro Alencar Fernandes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noz Pecan - T32 BSN-UNIDAVI - Comunidade</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="funcoes.js"></script>
+    <script>
+        function contatoWhats() {
+            msg = "*Nome:*%20" + document.getElementById("fnome").value + "%0A";
+            msg = msg + "*Fone:*%20" + document.getElementById("ffone").value + "%0A";
+            msg = msg + "*e-mail:*%20" + document.getElementById("femail").value + "%0A";
+            msg = msg + "*Contribuição:*%20" + document.getElementById("text").value;
+            abreWhats("5547999689513", msg);
+            document.getElementById("msg").innerText = "Mensagem enviada!";
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <header id="home">
+        <div id="topo">
+            <img src="img/nozpecan-topo.png">
+            <h1>Noz Pecan</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#o-que-e">O que é</a></li>
+                <li><a href="index.html#historico">Histórico</a></li>
+                <li><a href="index.html#beneficios">Benefícios</a></li>
+                <li><a href="index.html#cultivo">Cultivo</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                <li><a href="comunidade.html#links">Links</a></li>
+                <li><a href="comunidade.html#contribuir">Contribuir</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="links">
+            <h2>Links Interessantes e Referências</h2>
+            <ul>
+                <li>
+                    <a href="https://pt.wikipedia.org/wiki/Carya_illinoinensis" target="_blank"
+                        rel="noopener noreferrer">
+                        Wikipédia - Carya illinoinensis
+                    </a>: Enciclopédia livre com informações biológicas, taxonomia e detalhes técnicos da nogueira-pecã.
+                </li>
+                <li>
+                    <a href="https://www.tuasaude.com/noz-pecan/" target="_blank" rel="noopener noreferrer">
+                        Tua Saúde - Guia Nutricional da Noz-Pecã
+                    </a>: Artigo completo focado nos benefícios do fruto para a saúde, tabelas nutricionais e receitas
+                    saudáveis.
+                </li>
+                <li>
+                    <a href="https://www.abncnuts.org.br/noz-peca/" target="_blank" rel="noopener noreferrer">
+                        ABNC - Associação Brasileira de Nozes e Castanhas
+                    </a>: Portal oficial com informações institucionais, histórico do fruto no Brasil e curiosidades
+                    sobre o plantio.
+                </li>
+                <li>
+                    <a href="https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/05/03/noz-peca-superalimento-rico-em-antioxidantes-anti-envelhecimento-tera-supersafra-em-2026.ghtml"
+                        target="_blank" rel="noopener noreferrer">
+                        G1 - Supersafra de Noz-Pecã e Saudabilidade
+                    </a>: Reportagem especial sobre o ciclo produtivo no Rio Grande do Sul e os novos mercados do
+                    superalimento.
+                </li>
+                <li>
+                    <a href="https://wickbold.com.br/os-beneficios-da-noz-pecan-para-a-saude/" target="_blank"
+                        rel="noopener noreferrer">
+                        Wickbold - Benefícios e Versatilidade da Noz-Pecã
+                    </a>: Artigo complementar sobre propriedades antioxidantes, benefícios estéticos e usos alternativos
+                    em receitas.
+                </li>
+                <li>
+                    <a href="https://acesso.unidavi.edu.br/curso/sistemas-de-informacao" target="_blank"
+                        rel="noopener noreferrer">Curso Sistemas Informação UNIDAVI</a>: Apreseta o curso de Sistemas de
+                    Informação da UNIDAVI - BSN.
+                </li>
+                <li>
+                    <a href="https://instagram.com/sitiopassold" target="_blank" rel="noopener noreferrer">Instagram do
+                        Sítio Passold</a>: Produto de Noz Pecan em Lontras - Santa Catarina - Brasil.
+                </li>
+            </ul>
+        </section>
+        <section id="contribuir">
+            <h1>Contribuir</h1>
+            <p>Participe! Envie contribuições sobre <strong>Noz Pecan</strong>: Curiosidades; benefícios; links; imagens
+                e muito mais.</p>
+            <form id="formcontato" action="#" method="get" onsubmit="return contatoWhats()">
+                <label for="fnome">Nome: </label>
+                <input type="text" name="fnome" id="fnome" required><br>
+                <label for="ffone">Telefone: </label>
+                <input type="tel" name="ffone" id="ffone" required><br>
+                <label for="femail">e-mail: </label>
+                <input type="email" name="femail" id="femail"><br>
+                <label for="fcontribuicao">Contribuição: </label>
+                <textarea name="text" id="text" placeholder="Faça aqui sua contribuição. Obrigado!"></textarea><br>
+                <br>
+                <button type="submit" name="fenviar" id="fenviar">Enviar</button> <button type="reset" name="flimpar"
+                    id="flimpar">Limpar</button>
+            </form>
+            <p id="msg"></p>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

@@ -1,53 +1,141 @@
-@charset "UTF-8";
-
-:root {
-      --cor1: #4a2c11;    /* Castanho escuro */
-      --cor2: #d4a373;  /* Tom amadeirado claro */
-      --cor3: #6b705c;     /* Verde seco */
-      --cor4: #fefae0;   /* Creme suave */
-      --text: #2b2d42;
-    }
-
 * {
     margin: 0;
     padding: 0;
 }
 
-
 body {
-    margin: 0;
-    padding: 0;
-    color: var(--text);
+    width: 90%;
+    margin: 10px auto;
 }
 
 header {
+    padding: 10px 0;
+    width: 100%;
     display: flex;
-    background-color: var(--cor1);
-    color: var(--cor2);
-    padding: 15px;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    background-color: beige;
 }
 
-header > h1 {
-    padding: 20px;
-    font-size: 35px;
-    font-family: Arial, Helvetica, sans-serif;
+a, a:link, a:visited {
+    color: rgb(137, 101, 101);
 }
 
-header > nav > ul {
+
+main {
+    background-color: rgb(248, 245, 241);
+    padding: 5px;
+}
+
+img#ciclo {
     display: flex;
-    justify-content: flex-end;
+    width: 75%;
+    margin: 10px auto;
+}
+
+#topo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+}
+
+#topo h1 {
+    align-content: center;
+}
+
+header nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul {
+    margin: 10px auto;
+    display: flex;
     align-items: center;
-    padding-right: 100px;
-    gap: 20px;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+
+nav li {
+    display: inline-flex;
     list-style: none;
+    height: 22px;
+    min-width: 100px;
+    width: fit-content;
 }
 
-header > nav > ul > li > a {
-    padding: 15px;
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+nav li a {
+    width: 100px;
+    text-align: center;
+}
+
+
+nav li a:hover{
+    background-color:rgb(79, 62, 62);
+    color: white 
+}
+
+
+
+section, h2 {
+    margin: 10px 0;
+}
+
+dl {
+    margin-left: 20px;
+}
+
+p, dt, dd {
+    padding: 5px 0;
+}
+
+dt {
+    font-weight: bold;
+}
+
+table, tr, th, td {
+    border: 1px lightgray solid;
+}
+
+th, td {
+    padding: 5px;
+}
+
+ol, ul {
+    margin-left: 20px;
+    list-style-position: inside;
+}
+
+ol li, ul li {
+    margin: 5px;
+}
+
+form {
+    margin: 10px 0;
+}
+
+label {
+    display: inline-block;
+    margin: 5px 0;
+    width: 100px;
+    text-align: right;
+    border: 1px green;
+}
+
+input {
+    margin: 5px 0;
+    line-height: 22px;
+}
+
+textarea {
+    margin: 5px 0;
+    width: 400px;
+    vertical-align: top;
+}
+
+button {
+    height: 30px;
+    width: 65px;
 }
