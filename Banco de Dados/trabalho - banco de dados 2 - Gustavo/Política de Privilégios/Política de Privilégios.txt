@@ -1,0 +1,10 @@
+2. Regras da Política por Perfil:
+
+- Administrador (role_admin): Responsável pela governança, backups, criação de usuários e manutenção estrutural do banco. Possui controle irrestrito (ALL PRIVILEGES) sobre todas as tabelas, visões e esquemas.
+
+- Usuário Normal (role_operador): Responsável pela operação diária dos campeonatos. Pode registrar jogos, atualizar placares, lançar escalações, cartões, gols e ajustar dados organizacionais (como rodada, data ou estádio). Restrições: não pode executar DELETE em massa (evitando perda acidental de histórico), não pode alterar a estrutura do banco (DDL) e não tem acesso a valores de mercado (mercado).
+
+- Usuário Externo (role_externo): Perfil voltado para consulta pública (ex.: torcedores, imprensa ou APIs externas). Por segurança, o acesso direto às tabelas base é bloqueado (REVOKE), sendo liberado apenas o SELECT em Views específicas que expõem somente placares e a tabela da competição, ocultando dados sensíveis (como nascimento de atletas ou valores de mercado).
+
+
+Se quiser restringir ainda mais o Usuário Normal para que ele só consiga alterar colunas específicas da tabela partida (por exemplo, apenas mandante_gols, visitante_gols, data e rodada), basta trocar o UPDATE genérico por um GRANT UPDATE (mandante_gols, visitante_gols, data, rodada) ON partida TO role_operador;

@@ -1,0 +1,39 @@
+1. Particionamento (Escalabilidade Local):
+- O particionamento divide fisicamente uma tabela grande em pedaços menores dentro do mesmo servidor, mantendo a transparência para a aplicação.
+- Estratégia recomendada: Particionamento Horizontal por Faixa (RANGE) baseado em tempo (data ou temporada).
+- Onde aplicar: Nas tabelas históricas de maior volume (partida, ocorrencia, mercado, escalacao e participacao).   
+- Benefício: Consultas da temporada atual leem apenas a partição ativa (Partition Pruning), ignorando anos anteriores. Além disso, temporadas antigas podem ser movidas para discos mais baratos (cold storage) ou arquivadas instantaneamente com DETACH PARTITION.
+
+
+2. Replicação (Alta Disponibilidade e Separação de Carga):
+
+Em sistemas esportivos, a proporção de leituras para escritas é altíssima (milhares de torcedores consultando placares contra poucos operadores atualizando resultados).
+- Estratégia recomendada: Replicação Primário-Réplica (Primary-Replica) assíncrona para leitura, combinada com uma réplica síncrona para failover (alta disponibilidade).
+
+Distribuição do tráfego (alinhada aos papéis de segurança):
+- Nó Primário (Leitura/Escrita): Recebe exclusivamente as conexões do role_admin e do role_operador (inserção de partidas, placares, escalações e ocorrências).
+- Réplicas de Leitura (Read Replicas): Atendem 100% das consultas do role_externo (vw_placares_competicao e vw_tabela_classificacao), além de relatórios analíticos e atualização de visões materializadas.
+- Benefício: Um pico de acessos em dia de final de campeonato não trava a inserção de placares pelos operadores, e em caso de falha do servidor principal, a réplica síncrona assume sem perda de dados.
+
+
+3. Fragmentação / Sharding (Escalabilidade Horizontal):
+- Quando um único servidor não comporta mais o volume de dados ou de escritas simultâneas, os dados são distribuídos fisicamente entre múltiplos nós (servidores independentes).
+
+- Fragmentação Horizontal (Sharding por Região/Competição):Dividir as tabelas operacionais (partida, historico, ocorrencia, participacao, escalacao) usando pais_sequencia ou cmp_sequencia como chave de distribuição (ex.: Nó 1 para ligas da Inglaterra e Espanha; Nó 2 para Itália, Alemanha e França).
+
+-Tabelas de Referência Replicadas: Tabelas pequenas e de leitura constante (pais, competicao, estadio e clube) são replicadas integralmente em todos os nós para evitar JOINs distribuídos pela rede, que são lentos.  
+
+- Fragmentação Vertical (Separação de Domínios):Separar fisicamente em bancos ou servidores distintos os dados de Operação de Jogo (partida, escalacao, ocorrencia) dos dados de Mercado Financeiro (mercado e avaliações de jogador), já que possuem padrões de acesso, segurança e equipes consumidoras totalmente diferentes.
+
+
+4. Estratégia Multi-Tenant (Múltiplos Inquilinos)
+Caso o banco seja oferecido como plataforma (SaaS) para diferentes federações, ligas ou clientes de análise esportiva, existem três arquiteturas possíveis:
+
+Banco e Schema Compartilhados (com RLS):
+- Adiciona-se uma coluna tenant_id nas tabelas e ativa-se o Row-Level Security (RLS) no PostgreSQL para isolar automaticamente as linhas de cada cliente.
+
+Banco Compartilhado, Schema por Tenant:
+- Cada federação recebe seu próprio schema dentro do mesmo banco (ex.: liga_inglaterra.partida, liga_espanha.partida).
+
+Banco de Dados por Tenant:
+- Cada cliente possui uma instância/banco exclusivo e isolado.

@@ -1,0 +1,17 @@
+Com base no volume de dados identificado nos arquivos do seu banco — onde escalacao (~229 MB), participacao (~141 MB), ocorrencia (~85 MB) e mercado (~32 MB) concentram a maior parte dos registros —, as três alternativas abaixo atacam os principais gargalos de leitura (Full Table Scans, ordenações em disco e agregações pesadas).   
+
+
+1. Índices Compostos nas Tabelas de Maior Volume (participacao, escalacao e ocorrencia)Por padrão, SGBDs como o PostgreSQL criam índices apenas para chaves primárias, mas não indexam chaves estrangeiras automaticamente. Como escalacao, participacao e ocorrencia são as maiores tabelas do esquema, consultas filtrando por clube, jogador ou tipo de evento (como "todos os gols de uma partida") forçam leituras sequenciais completas (Sequential Scans).
+
+2. Índices de Ordenação Temporal e Índices Parciais (partida, mercado e escalacao)
+Consultas esportivas quase sempre filtram por competição/jogador e ordenam pela data mais recente (ex.: últimos jogos de uma temporada ou valor de mercado atual de um atleta). Além disso, certas colunas possuem poucos registros de interesse (ex.: apenas capitães em escalacao).
+Índices com ordenação (DESC): Evitam que o banco precise executar operações custosas de ordenação (Sort) em memória ou disco.
+Índices Parciais (WHERE): Indexam apenas um subconjunto relevante de linhas, ocupando muito menos espaço em disco e memória RAM.
+
+3. Visões Materializadas (Materialized Views) com Índices para Agregações Pesadas
+Visões comuns (VIEW) melhoram a organização e a segurança, mas não melhoram a performance, pois executam a consulta original toda vez que são chamadas. Para relatórios pesados — como artilharia, ranking de assistências ou minutos jogados por temporada —, a solução ideal é usar Visões Materializadas, que armazenam o resultado pré-calculado fisicamente no disco.
+
+
+Para manter os dados atualizados após o término de uma rodada sem bloquear os usuários que estão consultando a visão, utiliza-se:
+
+REFRESH MATERIALIZED VIEW CONCURRENTLY mv_estatisticas_jogador_temporada;

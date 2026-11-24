@@ -1,0 +1,35 @@
+Melhoramentos Feitos com os Princípios de Normalização:
+
+- Melhoramento 1: Aplicação da 3ª Forma Normal (3FN) — Extração da Entidade estadio
+Na tabela clube, existe uma dependência transitiva clara: o atributo assentos (capacidade) depende do estádio (nome_estadio), e não diretamente da chave primária do clube (clb_sequencia).
+
+Se dois clubes dividirem o mesmo estádio (como Milan e Inter de Milão no San Siro) e houver uma reforma que altere o número de assentos, você teria que atualizar múltiplos registros na tabela clube, gerando risco de anomalia de atualização. Além disso, a tabela partida repete o nome do estádio como texto livre (estadio varchar(200)), o que favorece erros de digitação e duplicidade.
+
+Ação no modelo:
+- Criar uma nova tabela estadio contendo est_sequencia (PK), nome e assentos.
+- Remover nome_estadio e assentos da tabela clube, substituindo-os pela chave estrangeira est_sequencia (estádio mandante do clube).
+Substituir o campo de texto estadio na tabela partida pela chave estrangeira est_sequencia (estádio onde o jogo efetivamente ocorreu, útil para finais em campo neutro).
+
+
+- Melhoramento 2: Aplicação da 2ª Forma Normal (2FN) — Eliminação de Dependências Parciais
+Na 2FN, todos os atributos não-chave de uma tabela com chave primária composta devem depender da chave inteira, e não apenas de parte dela.
+- Na tabela participacao (PK composta: gam_sequencia, jog_sequencia):
+date e cmp_sequencia dependem apenas de gam_sequencia (já existem na tabela partida).
+clb_sequencia_atual depende apenas de jog_sequencia (já existe na tabela jogador).
+- Na tabela escalacao (PK composta: gam_sequencia, jog_sequencia):
+data depende apenas de gam_sequencia (já existe em partida).
+
+Ação no modelo: Remover date, cmp_sequencia e clb_sequencia_atual de participacao, e remover data de escalacao. Sempre que precisar dessas informações, basta fazer JOIN com partida ou jogador.
+
+
+
+Melhoramento 3: Aplicação da 3ª Forma Normal (3FN) — Eliminação de Dependências Transitivas
+Na 3FN, nenhum atributo não-chave deve depender de outro atributo não-chave.
+
+- Criação da tabela pais: Na tabela competicao, o atributo pais_nome depende de pais_sequencia, e não diretamente da chave primária cmp_sequencia. Se o nome de um país mudar, seria necessário atualizar várias linhas em competicao.
+Ação: Extrair pais_sequencia e pais_nome para uma nova tabela pais e manter apenas a FK pais_sequencia em competicao.
+
+- Remoção de atributos derivados em jogador e partida:
+Em jogador, o campo equipe depende de clb_sequencia_atual (já existe como nome na tabela clube).
+Em partida, o campo competicao_tipo depende de cmp_sequencia (já existe como tipo na tabela competicao).
+- Ação: Remover equipe de jogador e competicao_tipo de partida.
