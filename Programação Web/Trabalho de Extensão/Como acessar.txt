@@ -1,0 +1,24 @@
+1. Colocar o projeto no lugar certo
+
+Extraia o zip dentro de C:\xampp\htdocs\. O caminho final tem que ficar assim:
+
+C:\xampp\htdocs\mural-solidario\index.php
+
+Cuidado para não ficar com a pasta duplicada (htdocs\mural-solidario\mural-solidario\...). Isso é comum quando se extrai um zip no Windows.
+
+2. Ligar os serviços
+
+Abra o XAMPP Control Panel e clique em Start no Apache e no MySQL. Os dois devem ficar com o nome em verde.
+
+3. Criar o banco
+
+No navegador, acesse http://localhost/phpmyadmin
+Na barra de cima, clique em Importar, sem selecionar nenhum banco na lateral
+Em “Escolher arquivo”, selecione o banco.sql que está na pasta do projeto
+Desça até o fim da página e clique em Importar
+
+Não precisa criar o banco antes, porque o próprio script cria o mural_solidario com as tabelas e os dados de exemplo. Quando terminar, ele aparece na lista da esquerda.
+
+4. Abrir o sistema
+
+Acesse http://localhost/mural-solidario. Para a área administrativa, clique em “Área da entidade” e entre com admin@mural.com / admin123.

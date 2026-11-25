@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<rect width="400" height="300" fill="#faebdb"/>
+<circle cx="200" cy="165" r="112" fill="#f6d5b4" fill-opacity=".55"/>
+<circle cx="62" cy="58" r="10" fill="#f6d5b4"/><circle cx="345" cy="70" r="16" fill="#f6d5b4"/><circle cx="330" cy="250" r="7" fill="#f6d5b4"/><circle cx="58" cy="230" r="14" fill="#f6d5b4" fill-opacity=".8"/>
+<ellipse cx="200" cy="254" rx="105" ry="10" fill="#000" fill-opacity=".08"/>
+<rect x="125" y="105" width="130" height="145" fill="#f2b134"/><path d="M255 105 L285 87 L285 232 L255 250 Z" fill="#966d20"/><path d="M125 105 L155 87 L285 87 L255 105 Z" fill="#bc8a28"/><rect x="137" y="140" width="106" height="66" rx="8" fill="#fff"/><text x="190.0" y="171.0" font-size="18" font-weight="800" fill="#a97b24" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">BISCOITO</text><text x="190.0" y="189.0" font-size="12" font-weight="700" fill="#8a8a8a" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">água e sal</text>
+</svg>

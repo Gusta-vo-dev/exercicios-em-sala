@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<rect width="400" height="300" fill="#faebdb"/>
+<circle cx="200" cy="165" r="112" fill="#f6d5b4" fill-opacity=".55"/>
+<circle cx="62" cy="58" r="10" fill="#f6d5b4"/><circle cx="345" cy="70" r="16" fill="#f6d5b4"/><circle cx="330" cy="250" r="7" fill="#f6d5b4"/><circle cx="58" cy="230" r="14" fill="#f6d5b4" fill-opacity=".8"/>
+<ellipse cx="200" cy="254" rx="105" ry="10" fill="#000" fill-opacity=".08"/>
+<path d="M165 125 Q165 98 188 88 L188 66 L212 66 L212 88 Q235 98 235 125 L235 238 Q235 250 223 250 L177 250 Q165 250 165 238 Z" fill="#f2c94c" fill-opacity=".9"/><path d="M165 125 Q165 98 188 88 L188 66 L212 66 L212 88 Q235 98 235 125 L235 238 Q235 250 223 250 L177 250 Q165 250 165 238 Z" fill="none" stroke="#ae7f18" stroke-width="3"/><rect x="184" y="50" width="32" height="20" rx="4" fill="#e0a31f"/><rect x="174" y="105" width="8" height="125" rx="4" fill="#fff" fill-opacity=".4"/><rect x="170" y="148" width="60" height="60" rx="6" fill="#fff"/><text x="200.0" y="176.0" font-size="18" font-weight="800" fill="#9c7215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">ÓLEO</text><text x="200.0" y="194.0" font-size="12" font-weight="700" fill="#8a8a8a" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">de soja</text>
+</svg>

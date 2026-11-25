@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<rect width="400" height="300" fill="#deeaf8"/>
+<circle cx="200" cy="165" r="112" fill="#bad4f0" fill-opacity=".55"/>
+<circle cx="62" cy="58" r="10" fill="#bad4f0"/><circle cx="345" cy="70" r="16" fill="#bad4f0"/><circle cx="330" cy="250" r="7" fill="#bad4f0"/><circle cx="58" cy="230" r="14" fill="#bad4f0" fill-opacity=".8"/>
+<ellipse cx="200" cy="254" rx="105" ry="10" fill="#000" fill-opacity=".08"/>
+<rect x="150" y="122" width="100" height="128" rx="18" fill="#e86fa3"/><rect x="187" y="102" width="26" height="24" rx="3" fill="#b4567f"/><rect x="195" y="80" width="10" height="26" fill="#dcdcdc"/><rect x="178" y="70" width="44" height="13" rx="5" fill="#f4f4f4" stroke="#cfcfcf" stroke-width="2"/><rect x="218" y="72" width="30" height="8" rx="4" fill="#f4f4f4" stroke="#cfcfcf" stroke-width="2"/><rect x="157" y="135" width="9" height="100" rx="4" fill="#fff" fill-opacity=".3"/><rect x="162" y="160" width="76" height="58" rx="6" fill="#fff"/><text x="200.0" y="187.0" font-size="13" font-weight="800" fill="#a24d72" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">SABONETE</text><text x="200.0" y="205.0" font-size="12" font-weight="700" fill="#8a8a8a" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">líquido</text>
+</svg>

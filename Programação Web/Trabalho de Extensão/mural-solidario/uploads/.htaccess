@@ -1,0 +1,4 @@
+# Impede que arquivos .php enviados para esta pasta sejam executados
+<FilesMatch "\.(php|phtml|phar)$">
+    Require all denied
+</FilesMatch>

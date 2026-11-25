@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<rect width="400" height="300" fill="#ebe2f5"/>
+<circle cx="200" cy="165" r="112" fill="#d6c3ea" fill-opacity=".55"/>
+<circle cx="62" cy="58" r="10" fill="#d6c3ea"/><circle cx="345" cy="70" r="16" fill="#d6c3ea"/><circle cx="330" cy="250" r="7" fill="#d6c3ea"/><circle cx="58" cy="230" r="14" fill="#d6c3ea" fill-opacity=".8"/>
+<ellipse cx="200" cy="254" rx="105" ry="10" fill="#000" fill-opacity=".08"/>
+<rect x="125" y="205" width="150" height="44" rx="12" fill="#bb6b6b"/><path d="M135 235 Q200 245 265 235" stroke="#fff" stroke-opacity=".35" stroke-width="3" fill="none"/><rect x="125" y="213" width="150" height="5" fill="#fff" fill-opacity=".55"/><rect x="125" y="165" width="150" height="44" rx="12" fill="#f08a8a"/><path d="M135 195 Q200 205 265 195" stroke="#fff" stroke-opacity=".35" stroke-width="3" fill="none"/><rect x="125" y="173" width="150" height="5" fill="#fff" fill-opacity=".55"/><rect x="125" y="125" width="150" height="44" rx="12" fill="#f5b2b2"/><path d="M135 155 Q200 165 265 155" stroke="#fff" stroke-opacity=".35" stroke-width="3" fill="none"/><rect x="125" y="133" width="150" height="5" fill="#fff" fill-opacity=".55"/><rect x="150" y="82" width="100" height="36" rx="18" fill="#fff"/><text x="200.0" y="106.0" font-size="18" font-weight="800" fill="#a86060" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">TOALHA</text>
+</svg>

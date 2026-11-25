@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<rect width="400" height="300" fill="#d9eeec"/>
+<circle cx="200" cy="165" r="112" fill="#afdbd7" fill-opacity=".55"/>
+<circle cx="62" cy="58" r="10" fill="#afdbd7"/><circle cx="345" cy="70" r="16" fill="#afdbd7"/><circle cx="330" cy="250" r="7" fill="#afdbd7"/><circle cx="58" cy="230" r="14" fill="#afdbd7" fill-opacity=".8"/>
+<ellipse cx="200" cy="254" rx="105" ry="10" fill="#000" fill-opacity=".08"/>
+<path d="M150 118 Q150 100 168 98 L232 98 Q250 100 250 118 L250 236 Q250 250 236 250 L164 250 Q150 250 150 236 Z" fill="#3b7dd8"/><path d="M205 98 L215 68 Q220 58 232 60 L242 62 Q252 66 250 80 L246 110" fill="none" stroke="#2e61a8" stroke-width="14" stroke-linejoin="round"/><rect x="160" y="74" width="34" height="26" rx="5" fill="#2e61a8"/><rect x="160" y="112" width="9" height="120" rx="4" fill="#fff" fill-opacity=".3"/><rect x="164" y="145" width="72" height="66" rx="8" fill="#fff"/><text x="200.0" y="176.0" font-size="18" font-weight="800" fill="#295797" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">ÁGUA</text><text x="200.0" y="194.0" font-size="12" font-weight="700" fill="#8a8a8a" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">sanitária 2 L</text>
+</svg>

@@ -1,0 +1,585 @@
+/* =====================================================
+   Mural Solidário - Estilos
+   ===================================================== */
+
+/* Cores do projeto */
+:root {
+    --verde: #2e7d5b;
+    --verde-escuro: #1f5c42;
+    --verde-claro: #e8f5ee;
+    --prometido: #9fd6bb;
+    --fundo: #f6f8f5;
+    --texto: #24312b;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: 'Nunito', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+}
+
+/* ---------- Menu ---------- */
+.bg-verde {
+    background-color: var(--verde);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: var(--verde);
+    font-size: 1.2rem;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-weight: 600;
+    border-radius: 8px;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+
+.navbar .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-entidade {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ---------- Botões ---------- */
+.btn-verde {
+    background-color: var(--verde);
+    border-color: var(--verde);
+    color: #fff;
+    font-weight: 700;
+}
+
+.btn-verde:hover,
+.btn-verde:focus {
+    background-color: var(--verde-escuro);
+    border-color: var(--verde-escuro);
+    color: #fff;
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: #fff;
+    font-weight: 700;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5b;
+    color: #fff;
+}
+
+.btn-atalho {
+    background-color: var(--verde-claro);
+    color: var(--verde-escuro);
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 4px 14px;
+}
+
+.btn-atalho:hover {
+    background-color: var(--verde);
+    color: #fff;
+}
+
+/* ---------- Topo (hero) ---------- */
+.hero {
+    background: linear-gradient(135deg, var(--verde) 0%, #3c9a72 60%, #58b38a 100%);
+    color: #fff;
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+.hero-pequeno {
+    padding: 40px 0;
+}
+
+.hero-tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.18);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.hero-titulo {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.hero-titulo span {
+    color: #ffe08a;
+}
+
+.hero-texto {
+    font-size: 1.15rem;
+    opacity: 0.95;
+    max-width: 560px;
+}
+
+.hero-imagem {
+    max-height: 360px;
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+/* A imagem do topo sobe e desce devagar */
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.numeros-topo .numero {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.legenda-numero {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* ---------- Como funciona ---------- */
+.titulo-secao {
+    font-size: 1.8rem;
+}
+
+.passo {
+    position: relative;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 28px 24px;
+    height: 100%;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.passo:hover {
+    transform: translateY(-4px);
+}
+
+.passo-icone {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background-color: var(--verde-claro);
+    color: var(--verde);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.passo-numero {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--verde-claro);
+}
+
+.passo p {
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+/* ---------- Filtros ---------- */
+.barra-filtros {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.filtro-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip-categoria {
+    border: 2px solid var(--cor);
+    background-color: #fff;
+    color: var(--cor);
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-weight: 700;
+    transition: all 0.15s;
+}
+
+.chip-categoria:hover {
+    background-color: color-mix(in srgb, var(--cor) 12%, white);
+}
+
+.chip-categoria.ativo {
+    background-color: var(--cor);
+    color: #fff;
+}
+
+.chip-categoria .qtd {
+    display: inline-block;
+    min-width: 22px;
+    margin-left: 4px;
+    padding: 0 6px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.08);
+    font-size: 0.8rem;
+}
+
+/* ---------- Cards dos itens ---------- */
+.card-item {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-item.atingida {
+    opacity: 0.75;
+}
+
+.card-item-imagem {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background-color: color-mix(in srgb, var(--cor) 15%, white);
+}
+
+.card-item-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card-item:hover .card-item-imagem img {
+    transform: scale(1.05);
+}
+
+/* Quando o item não tem imagem, mostra o ícone da categoria */
+.sem-imagem {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--cor);
+}
+
+.selos {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.selo {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.selo-urgente {
+    background-color: #e5484d;
+    animation: pulsar 1.8s infinite;
+}
+
+.selo-quase {
+    background-color: #f2a91d;
+}
+
+.selo-ok {
+    background-color: var(--verde);
+}
+
+/* O selo de urgente "pulsa" para chamar atenção */
+@keyframes pulsar {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+.categoria-item {
+    color: var(--cor);
+    font-weight: 800;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-item .card-title {
+    font-weight: 800;
+}
+
+.falta {
+    color: #6c757d;
+}
+
+/* ---------- Barra de progresso ---------- */
+.progress-stacked {
+    height: 12px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background-color: var(--verde);
+    /* a barra "cresce" quando a página abre */
+    animation: crescer 1s ease-out;
+    transform-origin: left;
+}
+
+@keyframes crescer {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+/* Parte da barra que foi prometida mas ainda não chegou */
+.barra-prometido {
+    background-color: var(--prometido);
+}
+
+.texto-prometido {
+    color: #3f8f69;
+}
+
+/* Quadradinhos da legenda */
+.legenda {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
+.legenda-recebido {
+    background-color: var(--verde);
+}
+
+.legenda-prometido {
+    background-color: var(--prometido);
+}
+
+/* ---------- Chamada final ---------- */
+.chamada-final {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: linear-gradient(135deg, #f2a91d, #e8913a);
+    color: #fff;
+    border-radius: 16px;
+    padding: 28px;
+}
+
+/* ---------- Tela de doar / obrigado ---------- */
+.link-voltar {
+    color: var(--verde);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.card-form {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.resumo-item:hover {
+    transform: none;
+}
+
+.mini-numeros strong {
+    display: block;
+    font-size: 1.3rem;
+}
+
+.mini-numeros span {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.seletor-qtd {
+    width: 160px;
+}
+
+.campo-data {
+    max-width: 190px;
+}
+
+.info-entrega {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background-color: var(--verde-claro);
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.info-entrega i {
+    color: var(--verde);
+    font-size: 1.4rem;
+}
+
+.icone-sucesso {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: var(--verde);
+    color: #fff;
+    font-size: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: aparecer 0.6s ease-out;
+}
+
+@keyframes aparecer {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.miniatura {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.lista-resumo li {
+    margin-bottom: 8px;
+}
+
+.lista-resumo i {
+    color: var(--verde);
+    margin-right: 4px;
+}
+
+/* ---------- Sobre ---------- */
+.card-numero {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.card-numero .numero {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--verde);
+}
+
+.mapa {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 240px;
+    border: 0;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+    background-color: #1d3b2e;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.rodape hr {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- Área administrativa ---------- */
+.area-admin .card-painel {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.icone-painel {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+.area-admin .table {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.thumb-admin {
+    width: 48px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.previa-chip {
+    pointer-events: none;
+}
+
+/* Formulário em modo de edição fica destacado */
+.form-editando {
+    border: 2px solid #f2a91d !important;
+    box-shadow: 0 0 0 4px rgba(242, 169, 29, 0.2) !important;
+}
+
+.linha-editando td {
+    background-color: #fff6e0 !important;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 576px) {
+    .hero-titulo {
+        font-size: 2rem;
+    }
+
+    .numeros-topo .numero {
+        font-size: 1.6rem;
+    }
+}
+
+.logo-grande {
+    width: 64px;
+    height: 64px;
+    font-size: 2rem;
+    background-color: var(--verde);
+    color: #fff;
+    border-radius: 18px;
+}

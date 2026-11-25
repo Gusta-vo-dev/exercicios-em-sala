@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<rect width="400" height="300" fill="#deeaf8"/>
+<circle cx="200" cy="165" r="112" fill="#bad4f0" fill-opacity=".55"/>
+<circle cx="62" cy="58" r="10" fill="#bad4f0"/><circle cx="345" cy="70" r="16" fill="#bad4f0"/><circle cx="330" cy="250" r="7" fill="#bad4f0"/><circle cx="58" cy="230" r="14" fill="#bad4f0" fill-opacity=".8"/>
+<ellipse cx="200" cy="254" rx="105" ry="10" fill="#000" fill-opacity=".08"/>
+<path d="M172 86 Q200 48 228 86" fill="none" stroke="#4680b3" stroke-width="10" stroke-linecap="round"/><rect x="122" y="84" width="156" height="166" rx="32" fill="#5aa5e6"/><path d="M140 100 Q132 170 140 235" stroke="#fff" stroke-opacity=".25" stroke-width="10" fill="none" stroke-linecap="round"/><circle cx="200" cy="114" r="12" fill="#fff" fill-opacity=".5"/><rect x="142" y="140" width="116" height="66" rx="8" fill="#fff"/><text x="200.0" y="171.0" font-size="18" font-weight="800" fill="#3e73a1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">FRALDA</text><text x="200.0" y="189.0" font-size="12" font-weight="700" fill="#8a8a8a" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">geriátrica G</text>
+</svg>

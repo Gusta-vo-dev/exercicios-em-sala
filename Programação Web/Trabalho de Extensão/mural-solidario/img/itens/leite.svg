@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<rect width="400" height="300" fill="#faebdb"/>
+<circle cx="200" cy="165" r="112" fill="#f6d5b4" fill-opacity=".55"/>
+<circle cx="62" cy="58" r="10" fill="#f6d5b4"/><circle cx="345" cy="70" r="16" fill="#f6d5b4"/><circle cx="330" cy="250" r="7" fill="#f6d5b4"/><circle cx="58" cy="230" r="14" fill="#f6d5b4" fill-opacity=".8"/>
+<ellipse cx="200" cy="254" rx="105" ry="10" fill="#000" fill-opacity=".08"/>
+<rect x="155" y="92" width="85" height="158" fill="#3d8fd1"/><path d="M240 92 L268 76 L268 234 L240 250 Z" fill="#255881"/><path d="M155 92 L197 62 L240 92 Z" fill="#2f6fa3"/><path d="M197 62 L225 46 L268 76 L240 92 Z" fill="#255881"/><rect x="190" y="40" width="40" height="12" fill="#2f6fa3" transform="rotate(-30 210 46)"/><rect x="161" y="135" width="73" height="64" rx="8" fill="#fff"/><text x="197.5" y="165.0" font-size="18" font-weight="800" fill="#2a6492" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">LEITE</text><text x="197.5" y="183.0" font-size="12" font-weight="700" fill="#8a8a8a" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">integral 1 L</text>
+</svg>

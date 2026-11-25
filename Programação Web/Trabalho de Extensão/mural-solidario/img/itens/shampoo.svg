@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<rect width="400" height="300" fill="#deeaf8"/>
+<circle cx="200" cy="165" r="112" fill="#bad4f0" fill-opacity=".55"/>
+<circle cx="62" cy="58" r="10" fill="#bad4f0"/><circle cx="345" cy="70" r="16" fill="#bad4f0"/><circle cx="330" cy="250" r="7" fill="#bad4f0"/><circle cx="58" cy="230" r="14" fill="#bad4f0" fill-opacity=".8"/>
+<ellipse cx="200" cy="254" rx="105" ry="10" fill="#000" fill-opacity=".08"/>
+<path d="M148 132 Q148 108 178 100 L182 82 L218 82 L222 100 Q252 108 252 132 L252 236 Q252 250 238 250 L162 250 Q148 250 148 236 Z" fill="#3fb6a8"/><rect x="178" y="58" width="44" height="28" rx="6" fill="#318d83"/><rect x="156" y="128" width="9" height="108" rx="4" fill="#fff" fill-opacity=".3"/><rect x="158" y="150" width="84" height="62" rx="6" fill="#fff"/><text x="200.0" y="179.0" font-size="17" font-weight="800" fill="#2c7f75" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">SHAMPOO</text><text x="200.0" y="197.0" font-size="12" font-weight="700" fill="#8a8a8a" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">neutro</text>
+</svg>
